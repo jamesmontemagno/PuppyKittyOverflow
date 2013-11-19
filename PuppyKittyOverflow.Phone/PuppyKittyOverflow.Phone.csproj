@@ -152,8 +152,35 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZLib.Phone">
+      <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\ICSharpCode.SharpZLib.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools">
+      <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\ImageTools.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.Controls">
+      <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\ImageTools.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.Filtering">
+      <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\ImageTools.Filtering.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.IO.Bmp">
+      <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\ImageTools.IO.Bmp.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.IO.Gif">
+      <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\ImageTools.IO.Gif.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.IO.Png">
+      <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\ImageTools.IO.Png.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageTools.Utils">
+      <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\ImageTools.Utils.dll</HintPath>
+    </Reference>
     <Reference Include="MarkedUp">
       <HintPath>..\packages\MarkedUp.1.0.7\lib\WindowsPhone8\MarkedUp.dll</HintPath>
+    </Reference>
+    <Reference Include="PhoneCodeContractsAssemblies">
+      <HintPath>..\packages\ImageTools.0.3.1\lib\sl3-wp\PhoneCodeContractsAssemblies.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.18\lib\sl4-windowsphone71\System.Net.Http.dll</HintPath>

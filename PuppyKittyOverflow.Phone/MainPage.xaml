@@ -6,12 +6,16 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="clr-namespace:ImageTools.Controls;assembly=ImageTools.Controls"
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.Resources>
+        <controls:ImageConverter x:Key="ImageConverter" />
+    </phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -56,10 +60,12 @@
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
-            <Button x:Name="ButtonDog" Click="ButtonDog_OnClick">Dog</Button>
-            <Button x:Name="ButtonCat" Grid.Column="1" Grid.Row="0" Click="ButtonCat_OnClick">Cat</Button>
+            <Button x:Name="ButtonDog" Click="ButtonDog_OnClick">Puppy</Button>
+            <Button x:Name="ButtonCat" Grid.Column="1" Grid.Row="0" Click="ButtonCat_OnClick">Kitty</Button>
             <ProgressBar x:Name="LoadingProgressBar" Visibility="Collapsed" Margin="12" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" IsIndeterminate="True"></ProgressBar>
-            <Image Margin="12" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" x:Name="CatDogImage"></Image>
+
+            <Image Margin="12" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" x:Name="CatDogImageFail"></Image>
+            <controls:AnimatedImage Margin="12" Stretch="Uniform" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" x:Name="CatDogImage" Source="{Binding ImageSource, Converter={StaticResource ImageConverter}}"></controls:AnimatedImage>
             <Button x:Name="ButtonSetLockScreen" Visibility="Collapsed"  IsEnabled="False"  Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Click="ButtonSetLockScreen_OnClick">Set Lock Screen</Button>
             <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" FontSize="14" >V 1.0.0.0 Copyright Refractored, catoverflow.com, dogoverflow.com: Twitter Support: @JamesMontemagno</TextBlock>
             

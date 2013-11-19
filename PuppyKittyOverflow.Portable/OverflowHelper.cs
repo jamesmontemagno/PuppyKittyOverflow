@@ -29,6 +29,8 @@ namespace PuppyKittyOverflow.Portable
                     client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue();
 
                 client.DefaultRequestHeaders.CacheControl.NoCache = true;
+                client.DefaultRequestHeaders.IfModifiedSince = DateTime.UtcNow;
+                client.DefaultRequestHeaders.CacheControl.NoStore = true;
                 client.Timeout = new TimeSpan(0,0,10);
                 
                 return await client.GetStringAsync(url);
