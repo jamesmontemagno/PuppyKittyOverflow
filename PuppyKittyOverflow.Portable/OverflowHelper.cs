@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace PuppyKittyOverflow.Portable
@@ -23,10 +24,15 @@ namespace PuppyKittyOverflow.Portable
             {
                 var url = animal == Animal.Cat ? CatUrl : DogUrl;
 
-                using (var client = new HttpClient())
-                {
-                    return await client.GetStringAsync(url);
-                }
+                var client = new HttpClient();
+                if (client.DefaultRequestHeaders.CacheControl == null)
+                    client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue();
+
+                client.DefaultRequestHeaders.CacheControl.NoCache = true;
+                client.Timeout = new TimeSpan(0,0,10);
+                
+                return await client.GetStringAsync(url);
+                
 
             }
             catch (Exception ex)
