@@ -21,21 +21,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchLink>SdkOnly</MtouchLink>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>True</MtouchDebug>
-    <MtouchSdkVersion>6.0</MtouchSdkVersion>
-    <MtouchProfiling>False</MtouchProfiling>
-    <MtouchExtraArgs />
-    <MtouchFastDev>False</MtouchFastDev>
-    <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
-    <MtouchArch>Default, ARMv7</MtouchArch>
-    <MtouchUseLlvm>False</MtouchUseLlvm>
-    <MtouchUseThumb>False</MtouchUseThumb>
-    <MtouchUseSGen>False</MtouchUseSGen>
-    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <MtouchSdkVersion>6.1</MtouchSdkVersion>
+    <MtouchArch>ARMv7, ARMv7s</MtouchArch>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
-    <MtouchI18n />
+    <MtouchI18n>
+    </MtouchI18n>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -60,6 +52,12 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchSdkVersion>7.0</MtouchSdkVersion>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -130,7 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PuppyKittyOverflow.Portable\PuppyKittyOverflow.Portable.csproj">
-      <Project>{3e5a7e5f-09be-4270-8a16-97423b1b87ff}</Project>
+      <Project>{3E5A7E5F-09BE-4270-8A16-97423B1B87FF}</Project>
       <Name>PuppyKittyOverflow.Portable</Name>
     </ProjectReference>
   </ItemGroup>
@@ -140,12 +138,12 @@
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="btprogresshud">
-      <Visible>False</Visible>
       <Version>1.8</Version>
+      <Visible>False</Visible>
     </XamarinComponentReference>
     <XamarinComponentReference Include="sdwebimage">
-      <Visible>False</Visible>
       <Version>3.4</Version>
+      <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
