@@ -82,7 +82,9 @@ namespace PuppyKittyOverflow.Touch
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+            
 		    View.BackgroundColor = UIColor.LightGray;
+		    ViewBackground.Layer.CornerRadius = 10.0f;
 		    // Perform any additional setup after loading the view, typically from a nib.
 		}
 
