@@ -33,8 +33,12 @@ namespace PuppyKittyOverflow.Portable
                 client.DefaultRequestHeaders.CacheControl.NoStore = true;
                 client.Timeout = new TimeSpan(0,0,10);
                 
-                return await client.GetStringAsync(url);
-                
+                var imageUrl = await client.GetStringAsync(url);
+                if (!string.IsNullOrWhiteSpace(imageUrl) && imageUrl.EndsWith("\n"))
+                    imageUrl = imageUrl.TrimEnd('\n');
+
+                return imageUrl;
+
 
             }
             catch (Exception ex)
