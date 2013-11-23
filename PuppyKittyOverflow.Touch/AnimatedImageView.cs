@@ -44,7 +44,6 @@ namespace PuppyKittyOverflow.Touch
                 frameImages.Add(NSObject.FromObject(frameImage));
 
                 var properties = imageSource.GetProperties(i, null);
-                var gifProperties = properties.Dictionary["kCGImagePropertyGIFDictionary"];
                 var duration = properties.Dictionary["{GIF}"];
                 var delayTime = duration.ValueForKey(new NSString("DelayTime"));
                 var realDuration = double.Parse(delayTime.ToString());
@@ -86,7 +85,7 @@ namespace PuppyKittyOverflow.Touch
                 frameAnimation.RepeatCount = imageSourceLoopCount;
             }
 
-            frameAnimation.CalculationMode = "kCAAnimationDiscrete";
+            frameAnimation.CalculationMode = CAAnimation.AnimationDescrete;
             frameAnimation.Values = frameImages.ToArray();
             frameAnimation.Duration = totalFrameDuration;
             frameAnimation.KeyTimes = framePercentageDurations.ToArray();
@@ -104,48 +103,3 @@ namespace PuppyKittyOverflow.Touch
         }
     }
 }
-
-
-/*NSMutableArray* framePercentageDurations = [NSMutableArray arrayWithCapacity:frameCount];
-
-  for (NSUInteger frameIndex = 0; frameIndex < frameCount; frameIndex++) {
-    float currentDurationPercentage;
-
-    if (frameIndex == 0) {
-      currentDurationPercentage = 0.0;
-
-    } else {
-      NSNumber* previousDuration = [frameDurations objectAtIndex:frameIndex - 1];
-      NSNumber* previousDurationPercentage = [framePercentageDurations objectAtIndex:frameIndex - 1];
-
-      currentDurationPercentage = [previousDurationPercentage floatValue] + ([previousDuration floatValue] / totalFrameDuration);
-    }
-
-    [framePercentageDurations insertObject:[NSNumber numberWithFloat:currentDurationPercentage]
-                                   atIndex:frameIndex];
-  }
-
-  CFDictionaryRef imageSourceProperties = CGImageSourceCopyProperties(sourceRef, NULL);
-  CFDictionaryRef imageSourceGIFProperties = (CFDictionaryRef)CFDictionaryGetValue(imageSourceProperties, kCGImagePropertyGIFDictionary);
-  NSNumber* imageSourceLoopCount = (NSNumber *)CFDictionaryGetValue(imageSourceGIFProperties, kCGImagePropertyGIFLoopCount);
-
-  CFRelease(imageSourceProperties);
-
-  CAKeyframeAnimation* frameAnimation = [CAKeyframeAnimation animationWithKeyPath:@"contents"];
-
- 
-
-  frameAnimation.calculationMode = kCAAnimationDiscrete;
-  frameAnimation.values = frameImages;
-  frameAnimation.duration = totalFrameDuration;
-  frameAnimation.keyTimes = framePercentageDurations;
-  frameAnimation.removedOnCompletion = NO;
-
-  CGImageRef firstFrame = (CGImageRef)[frameImages objectAtIndex:0];
-  UIImageView* imageView = [[[UIImageView alloc] initWithFrame:CGRectMake(0.f, 0.f, CGImageGetWidth(firstFrame), CGImageGetHeight(firstFrame))] autorelease];
-  [[imageView layer] addAnimation:frameAnimation forKey:@"contents"];
-
-  return imageView;
-}
-
-@end*/
