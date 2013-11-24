@@ -96,19 +96,21 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BTProgressHUD">
-      <HintPath>..\Components\btprogresshud-1.8\lib\ios\BTProgressHUD.dll</HintPath>
-    </Reference>
-    <Reference Include="SDWebImage">
-      <HintPath>..\Components\sdwebimage-3.4\lib\ios\SDWebImage.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\Components\btprogresshud-1.8\lib\ios\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\cat.png" />
+    <BundleResource Include="dog.png">
+      <DependentUpon>AnimatedImageView.cs</DependentUpon>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -133,16 +135,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\cat.png" />
-    <Content Include="Resources\dog.png" />
-  </ItemGroup>
-  <ItemGroup>
     <XamarinComponentReference Include="btprogresshud">
       <Version>1.8</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
-    <XamarinComponentReference Include="sdwebimage">
-      <Version>3.4</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

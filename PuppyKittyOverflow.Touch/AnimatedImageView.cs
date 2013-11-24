@@ -13,15 +13,14 @@ namespace PuppyKittyOverflow.Touch
         public static UIImageView GetAnimatedImageView(string url, UIImageView imageView = null)
         {
             var sourceRef = CGImageSource.FromUrl(NSUrl.FromString(url));
-            return CreateAnimatedImageView(sourceRef, imageView);
-
-            //var source = GetAnimatedImageView(NSData.FromUrl(NSUrl.FromString(url)));
+			return CreateAnimatedImageView (sourceRef, imageView);
 
         }
 
         public static UIImageView GetAnimatedImageView(NSData nsData, UIImageView imageView = null)
         {
-            var sourceRef = CGImageSource.FromData(nsData);
+
+			var sourceRef = CGImageSource.FromData(nsData);
 
             return CreateAnimatedImageView(sourceRef, imageView);
         }
@@ -46,9 +45,11 @@ namespace PuppyKittyOverflow.Touch
                 var properties = imageSource.GetProperties(i, null);
                 var duration = properties.Dictionary["{GIF}"];
                 var delayTime = duration.ValueForKey(new NSString("DelayTime"));
+				duration.Dispose ();
                 var realDuration = double.Parse(delayTime.ToString());
                 frameDurations.Add(realDuration);
                 totalFrameDuration += realDuration;
+				frameImage.Dispose ();
             }
 
             var framePercentageDurations = new List<NSNumber>(frameCount);
@@ -85,6 +86,9 @@ namespace PuppyKittyOverflow.Touch
                 frameAnimation.RepeatCount = imageSourceLoopCount;
             }
 
+			imageSourceGIFProperties.Dispose ();
+
+
             frameAnimation.CalculationMode = CAAnimation.AnimationDescrete;
             frameAnimation.Values = frameImages.ToArray();
             frameAnimation.Duration = totalFrameDuration;
@@ -98,7 +102,7 @@ namespace PuppyKittyOverflow.Touch
 
             imageView.Layer.AddAnimation(frameAnimation, "contents");
 
-
+			frameAnimation.Dispose ();
             return imageView;
         }
     }

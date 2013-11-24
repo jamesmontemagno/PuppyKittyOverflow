@@ -4,7 +4,7 @@ using BigTed;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using PuppyKittyOverflow.Portable;
-using SDWebImage;
+using System.Net.Http;
 
 namespace PuppyKittyOverflow.Touch
 {
@@ -53,7 +53,9 @@ namespace PuppyKittyOverflow.Touch
 	            try
 	            {
                     
-	                var imageView = AnimatedImageView.GetAnimatedImageView(image, ImageViewAnimal);
+					var client = new HttpClient();
+					var stream = await client.GetStreamAsync(image);
+					AnimatedImageView.GetAnimatedImageView(NSData.FromStream(stream), ImageViewAnimal);
 
                     
                     loadDefault = false;
@@ -61,7 +63,7 @@ namespace PuppyKittyOverflow.Touch
 	            }
 	            catch (Exception ex)
 	            {
-	                
+					Console.WriteLine (ex);
 	            }
 
 	        }
