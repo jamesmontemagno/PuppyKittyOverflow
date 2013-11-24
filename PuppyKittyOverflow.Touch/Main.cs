@@ -15,5 +15,9 @@ namespace PuppyKittyOverflow.Touch
 			// you can specify it here.
 			UIApplication.Main (args, null, "AppDelegate");
 		}
+
+		public static bool IsiOS7 {
+			get { return UIDevice.CurrentDevice.CheckSystemVersion (7, 0); }
+		}
 	}
 }

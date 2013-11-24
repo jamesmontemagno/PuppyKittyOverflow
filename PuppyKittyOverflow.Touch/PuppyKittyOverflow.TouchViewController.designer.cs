@@ -29,17 +29,20 @@ namespace PuppyKittyOverflow.Touch
 
 		[Action ("ButtonPuppyClick:")]
 		partial void ButtonPuppyClick (MonoTouch.Foundation.NSObject sender);
+
+		[Action ("InfoButonClick:")]
+		partial void InfoButonClick (MonoTouch.Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (ButtonPuppy != null) {
-				ButtonPuppy.Dispose ();
-				ButtonPuppy = null;
-			}
-
 			if (ButtonKitty != null) {
 				ButtonKitty.Dispose ();
 				ButtonKitty = null;
+			}
+
+			if (ButtonPuppy != null) {
+				ButtonPuppy.Dispose ();
+				ButtonPuppy = null;
 			}
 
 			if (ImageViewAnimal != null) {

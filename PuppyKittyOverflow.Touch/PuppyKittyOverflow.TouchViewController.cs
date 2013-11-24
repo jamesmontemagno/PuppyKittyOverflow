@@ -36,7 +36,7 @@ namespace PuppyKittyOverflow.Touch
 		{
             SetImage(false);
 		}
-
+		private string image;
 	    private async void SetImage(bool cat)
 	    {
             ButtonKitty.Enabled = false;
@@ -45,7 +45,7 @@ namespace PuppyKittyOverflow.Touch
             BTProgressHUD.Show("Finding adorable animals!"); //show spinner + text
             //start spinner
 
-            var image = await OverflowHelper.GetPictureAsync(cat ? OverflowHelper.Animal.Cat : OverflowHelper.Animal.Dog);
+            image = await OverflowHelper.GetPictureAsync(cat ? OverflowHelper.Animal.Cat : OverflowHelper.Animal.Dog);
 	        bool loadDefault = true;
 	        if (!string.IsNullOrWhiteSpace(image))
 	        {
@@ -79,14 +79,31 @@ namespace PuppyKittyOverflow.Touch
             //stop spinner
 	    }
 
+		partial void InfoButonClick (NSObject sender)
+		{
+			var action = new UIAlertView("About", "Copyright 2013 Refractored LLC, @JamesMontemagno, Images provided by Catoverflow.com/Dogoverflow.com created by @abock", null, "OK", null);
+			action.Show();
+		}
+
 		#region View lifecycle
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-            
-		    View.BackgroundColor = UIColor.LightGray;
+			if(!Application.IsiOS7)
+		    	View.BackgroundColor = UIColor.LightGray;
+
 		    ViewBackground.Layer.CornerRadius = 10.0f;
+
+			NavigationItem.RightBarButtonItem = new UIBarButtonItem (UIBarButtonSystemItem.Action, delegate {
+				if(string.IsNullOrEmpty(image))
+					return;
+
+				var shareText = "#PuppyKittyOverflow Adorable Animals: " + image;
+				var social = new UIActivityViewController(new NSObject[] { new NSString(shareText)}, 
+					new UIActivity[] { new UIActivity() });
+				PresentViewController(social, true, null);
+			});
 		    // Perform any additional setup after loading the view, typically from a nib.
 		}
 

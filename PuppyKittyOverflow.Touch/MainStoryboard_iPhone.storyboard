@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWN-Sc-VTb">
-                                <rect key="frame" x="5" y="56" width="310" height="430"/>
+                                <rect key="frame" x="5" y="56" width="310" height="396"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Eq-z8-PhP">
-                                        <rect key="frame" x="5" y="5" width="300" height="420"/>
+                                        <rect key="frame" x="5" y="5" width="300" height="386"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                 </subviews>
@@ -58,12 +58,26 @@
                                     <action selector="ButtonKittyClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="t9L-Bt-jwR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJY-1c-pOE">
+                                <rect key="frame" x="149" y="462" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="InfoButonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="U1V-b4-6Eu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bWN-Sc-VTb" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="56" id="Dim-bG-QFV"/>
+                            <constraint firstAttribute="bottom" secondItem="bWN-Sc-VTb" secondAttribute="bottom" constant="52" id="G3s-O6-TtJ"/>
                             <constraint firstItem="bWN-Sc-VTb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="LIg-Of-5s9"/>
-                            <constraint firstAttribute="bottom" secondItem="bWN-Sc-VTb" secondAttribute="bottom" constant="20" id="Uif-Lz-xQC"/>
+                            <constraint firstAttribute="trailing" secondItem="dJY-1c-pOE" secondAttribute="trailing" constant="149" id="Qo2-bU-PJd"/>
+                            <constraint firstItem="dJY-1c-pOE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="149" id="Ve9-gt-MSz"/>
+                            <constraint firstAttribute="bottom" secondItem="dJY-1c-pOE" secondAttribute="bottom" constant="20" id="fZb-hi-cZO"/>
                             <constraint firstAttribute="trailing" secondItem="bWN-Sc-VTb" secondAttribute="trailing" constant="20" id="tK4-Rg-jlk"/>
                         </constraints>
                     </view>
