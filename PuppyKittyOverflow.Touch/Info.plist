@@ -36,6 +36,14 @@
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Default-568h@2x.png</string>
+		<string>Icon@2x</string>
+		<string>Icon-60@2x</string>
+		<string>Icon-Small-40@2x</string>
+		<string>Icon-Small@2x</string>
+		<string>Icon-Small</string>
+		<string>Icon</string>
 	</array>
+	<key>UIPrerenderedIcon</key>
+	<true/>
 </dict>
 </plist>

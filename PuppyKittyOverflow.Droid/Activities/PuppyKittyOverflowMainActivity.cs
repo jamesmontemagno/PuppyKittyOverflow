@@ -4,7 +4,6 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using PuppyKittyOverflow.Portable;
 using Object = Java.Lang.Object;
 using System.Net.Http;
 
@@ -75,7 +74,7 @@ namespace PuppyKittyOverflow.Droid.Activities
             try
             {
                 var image =
-                    await OverflowHelper.GetPictureAsync(cat ? OverflowHelper.Animal.Cat : OverflowHelper.Animal.Dog);
+                    await PuppyKittyOverflow.Portable.OverflowHelper.GetPictureAsync(cat ? PuppyKittyOverflow.Portable.OverflowHelper.Animal.Cat : PuppyKittyOverflow.Portable.OverflowHelper.Animal.Dog);
 
                 if (!string.IsNullOrWhiteSpace(image))
                 {
