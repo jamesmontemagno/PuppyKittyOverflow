@@ -5,6 +5,8 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using PuppyKittyOverflow.Portable;
 using System.Net.Http;
+using System.Threading.Tasks;
+using System.IO;
 
 namespace PuppyKittyOverflow.Touch
 {
@@ -55,7 +57,8 @@ namespace PuppyKittyOverflow.Touch
                     
 					var client = new HttpClient();
 					var stream = await client.GetStreamAsync(image);
-					AnimatedImageView.GetAnimatedImageView(NSData.FromStream(stream), ImageViewAnimal);
+					var data = await GetDataAsync(stream);
+					AnimatedImageView.GetAnimatedImageView(data, ImageViewAnimal);
 
                     
                     loadDefault = false;
@@ -78,6 +81,11 @@ namespace PuppyKittyOverflow.Touch
             BTProgressHUD.Dismiss();
             //stop spinner
 	    }
+
+		private async Task<NSData> GetDataAsync(Stream stream)
+		{
+			return await Task.Run (() =>  {return NSData.FromStream (stream);});
+		}
 
 		partial void InfoButonClick (NSObject sender)
 		{
@@ -106,6 +114,8 @@ namespace PuppyKittyOverflow.Touch
 			});
 		    // Perform any additional setup after loading the view, typically from a nib.
 		}
+
+
 
 		public override void ViewWillAppear (bool animated)
 		{
