@@ -18,6 +18,12 @@ namespace PuppyKittyOverflow.Touch
 			get;
 			set;
 		}
+
+		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
+		{
+			FlurryAnalytics.Flurry.StartSession ("FNDB7G8XD99Z7ZHQV4BT");
+			return true;
+		}
 		// This method is invoked when the application is about to move from active to inactive state.
 		// OpenGL applications should use this method to pause.
 		public override void OnResignActivation (UIApplication application)

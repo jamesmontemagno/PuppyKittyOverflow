@@ -31,11 +31,13 @@ namespace PuppyKittyOverflow.Touch
 
 		partial void ButtonKittyClick (NSObject sender)
 		{
+			FlurryAnalytics.Flurry.LogEvent("Cat");
             SetImage(true);
 		}
 
 		partial void ButtonPuppyClick (NSObject sender)
 		{
+			FlurryAnalytics.Flurry.LogEvent("Dog");
             SetImage(false);
 		}
 		private string image;
