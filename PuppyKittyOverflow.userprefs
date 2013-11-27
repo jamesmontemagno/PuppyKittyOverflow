@@ -1,14 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="AppStore|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PuppyKittyOverflow.Touch/AppDelegate.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.James's iPhone" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PuppyKittyOverflow.Touch/PuppyKittyOverflow.TouchViewController.cs">
     <Files>
-      <File FileName="PuppyKittyOverflow.Touch/PuppyKittyOverflow.TouchViewController.cs" Line="1" Column="1" />
+      <File FileName="PuppyKittyOverflow.Touch/PuppyKittyOverflow.TouchViewController.cs" Line="162" Column="43" />
       <File FileName="PuppyKittyOverflow.Touch/AnimatedImageView.cs" Line="1" Column="1" />
       <File FileName="../../../Downloads/UrlImageStore.cs" Line="1" Column="1" />
-      <File FileName="PuppyKittyOverflow.Portable/OverflowHelper.cs" Line="1" Column="1" />
-      <File FileName="PuppyKittyOverflow.Touch/Main.cs" Line="1" Column="1" />
-      <File FileName="PuppyKittyOverflow.Touch/AppDelegate.cs" Line="24" Column="1" />
-      <File FileName="PuppyKittyOverflow.Droid/Resources/values/Styles.xml" Line="1" Column="1" />
       <File FileName="PuppyKittyOverflow.Droid/Activities/PuppyKittyOverflowMainActivity.cs" Line="1" Column="1" />
       <File FileName="PuppyKittyOverflow.Droid/Helpers/AnimatedImageView.cs" Line="1" Column="1" />
       <File FileName="PuppyKittyOverflow.Touch/Info.plist" />
@@ -18,14 +14,13 @@
     <BreakpointStore>
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/AnimatedImageView.cs" line="16" column="1" />
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/AnimatedImageView.cs" line="15" column="1" />
-      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/AppDelegate.cs" line="24" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Droid MonoForAntroid.PreferredDevice="Nexus One" MonoForAntroid.PreferredTheme="Theme" />
   <MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Touch>
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="F8795E48Y8" TeamId="8P95D2238B" />
     <IPhoneTestFlightSettings_27CRelease ApiToken="d18ce6d107e5b5aa8b0d8d7390198e81_MTQ3MDA0MDIwMTMtMTEtMjUgMTI6MTM6NDIuODU0MzIy" TeamToken="49e672194481de8371b2dea8214f1e86_MzA0NzgzMjAxMy0xMS0yNSAxNToxMDo1Ni43Njg4NDY" ReleaseNotes="Added analytics" NotifyTeamMembers="False" ReplaceBinaries="False" DistributionLists="" UploadDSYMs="False" />
     <IPhoneZipBundleSettings CurrentFolder="/Users/jamesmontemagno/Documents/App Releases/PuppyKittyOverflow" />
   </MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Touch>
-  <MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Droid MonoForAntroid.PreferredDevice="Nexus One" MonoForAntroid.PreferredTheme="Theme" />
 </Properties>
