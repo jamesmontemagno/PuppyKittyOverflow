@@ -22,10 +22,10 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Droid MonoForAntroid.PreferredDevice="Nexus One" MonoForAntroid.PreferredTheme="Theme" />
   <MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Touch>
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="F8795E48Y8" TeamId="8P95D2238B" />
     <IPhoneTestFlightSettings_27CRelease ApiToken="d18ce6d107e5b5aa8b0d8d7390198e81_MTQ3MDA0MDIwMTMtMTEtMjUgMTI6MTM6NDIuODU0MzIy" TeamToken="49e672194481de8371b2dea8214f1e86_MzA0NzgzMjAxMy0xMS0yNSAxNToxMDo1Ni43Njg4NDY" ReleaseNotes="Added analytics" NotifyTeamMembers="False" ReplaceBinaries="False" DistributionLists="" UploadDSYMs="False" />
     <IPhoneZipBundleSettings CurrentFolder="/Users/jamesmontemagno/Documents/App Releases/PuppyKittyOverflow" />
   </MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Touch>
+  <MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Droid MonoForAntroid.PreferredDevice="Nexus One" MonoForAntroid.PreferredTheme="Theme" />
 </Properties>

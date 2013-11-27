@@ -32,16 +32,16 @@ namespace PuppyKittyOverflow.Touch
 		partial void ButtonKittyClick (NSObject sender)
 		{
 			FlurryAnalytics.Flurry.LogEvent("Cat");
-            SetImage(true);
+			SetImage(OverflowHelper.Animal.Cat);
 		}
 
 		partial void ButtonPuppyClick (NSObject sender)
 		{
 			FlurryAnalytics.Flurry.LogEvent("Dog");
-            SetImage(false);
+			SetImage(OverflowHelper.Animal.Dog);
 		}
 		private string image;
-	    private async void SetImage(bool cat)
+		private async void SetImage(OverflowHelper.Animal animal)
 	    {
             ButtonKitty.Enabled = false;
             ButtonPuppy.Enabled = false;
@@ -49,7 +49,7 @@ namespace PuppyKittyOverflow.Touch
             BTProgressHUD.Show("Finding adorable animals!"); //show spinner + text
             //start spinner
 
-            image = await OverflowHelper.GetPictureAsync(cat ? OverflowHelper.Animal.Cat : OverflowHelper.Animal.Dog);
+			image = await OverflowHelper.GetPictureAsync(animal);
 	        bool loadDefault = true;
 	        if (!string.IsNullOrWhiteSpace(image))
 	        {
@@ -75,7 +75,7 @@ namespace PuppyKittyOverflow.Touch
 
 	        if (loadDefault)
 	        {
-	            ImageViewAnimal.Image = UIImage.FromBundle(cat ? "cat.png" : "dog.png");
+				ImageViewAnimal.Image = UIImage.FromBundle(animal == OverflowHelper.Animal.Cat ? "cat.png" : "dog.png");
 	        }
 
 	        ButtonKitty.Enabled = true;
@@ -127,6 +127,7 @@ namespace PuppyKittyOverflow.Touch
 		public override void ViewDidAppear (bool animated)
 		{
 			base.ViewDidAppear (animated);
+			BecomeFirstResponder ();
 		}
 
 		public override void ViewWillDisappear (bool animated)
@@ -137,8 +138,31 @@ namespace PuppyKittyOverflow.Touch
 		public override void ViewDidDisappear (bool animated)
 		{
 			base.ViewDidDisappear (animated);
+			ResignFirstResponder ();
 		}
 
+		public override bool CanBecomeFirstResponder {
+			get {
+				return true;
+			}
+		}
+
+		// Called after the iOS determines the motion wasn't noise (such as walking up stairs).
+		public override void MotionEnded (UIEventSubtype motion, UIEvent evt)
+		{
+
+
+			base.MotionEnded(motion, evt);
+			if (!ButtonKitty.Enabled)
+				return;
+
+			// if the motion was a shake
+			if(motion == UIEventSubtype.MotionShake) {
+
+				FlurryAnalytics.Flurry.LogEvent("Otter");
+				SetImage (OverflowHelper.Animal.Otter);
+			}
+		}
 
 
 		#endregion

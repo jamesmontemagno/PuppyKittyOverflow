@@ -13,16 +13,23 @@ namespace PuppyKittyOverflow.Portable
         public enum Animal
         {
             Cat,
-            Dog
+			Dog,
+			Otter
         }
 
         private const string CatUrl = "http://catoverflow.com/api/query?limit=1&order=random";
         private const string DogUrl = "http://dogoverflow.com/api/query?limit=1&order=random";
+		private const string OtterUrl = "http://otteroverflow.com/api/query?limit=1&order=random";
         public async static Task<String> GetPictureAsync(Animal animal)
         {
             try
             {
-                var url = animal == Animal.Cat ? CatUrl : DogUrl;
+				var url = string.Empty;
+				switch(animal){
+				case Animal.Cat: url = CatUrl; break;
+				case Animal.Dog: url = DogUrl; break;
+				default: url = OtterUrl; break;
+				}
 
                 var client = new HttpClient();
                 if (client.DefaultRequestHeaders.CacheControl == null)
