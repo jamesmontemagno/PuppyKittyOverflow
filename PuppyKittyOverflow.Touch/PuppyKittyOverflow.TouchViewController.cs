@@ -91,17 +91,41 @@ namespace PuppyKittyOverflow.Touch
 
 		partial void InfoButonClick (NSObject sender)
 		{
-			var action = new UIAlertView("About", "Copyright 2013 Refractored LLC, @JamesMontemagno, Images provided by Catoverflow.com/Dogoverflow.com created by @abock", null, "OK", null);
+			var action = new UIAlertView("About", "Copyright 2013 Refractored LLC, @JamesMontemagno, Images provided by Catoverflow.com/Dogoverflow.com created by @abock  Shake phone for Otters!", null, "OK", null);
 			action.Show();
 		}
 
 		#region View lifecycle
+		public void ApplicationWillResignActive(NSNotification notification)
+		{
+			try{
+				ResignFirstResponder();
+				ImageViewAnimal.StopAnimating();
+			}
+			catch(Exception ex) {
+			}
+		}
+
+		public void ApplicationWillReturnActive(NSNotification notification)
+		{
+			try{
+				BecomeFirstResponder();
+				ImageViewAnimal.StartAnimating();
+			}
+			catch(Exception ex) {
+			}
+		}
+
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
 			if(!Application.IsiOS7)
 		    	View.BackgroundColor = UIColor.LightGray;
+
+			NSNotificationCenter.DefaultCenter.AddObserver ("UIApplicationWillResignActiveNotification", ApplicationWillResignActive);
+			NSNotificationCenter.DefaultCenter.AddObserver ("UIApplicationWillTerminateNotification", ApplicationWillResignActive);
+			NSNotificationCenter.DefaultCenter.AddObserver ("UIApplicationWillEnterForegroundNotification", ApplicationWillReturnActive); 
 
 		    ViewBackground.Layer.CornerRadius = 10.0f;
 
@@ -134,6 +158,7 @@ namespace PuppyKittyOverflow.Touch
 		{
 			base.ViewWillDisappear (animated);
 		}
+
 
 		public override void ViewDidDisappear (bool animated)
 		{
