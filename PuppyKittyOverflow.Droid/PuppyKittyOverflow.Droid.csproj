@@ -63,7 +63,9 @@
   <ItemGroup>
     <Compile Include="Activities\AboutActivity.cs" />
     <Compile Include="Activities\PuppyKittyOverflowMainActivity.cs" />
+    <Compile Include="Helpers\AccelerometerManager.cs" />
     <Compile Include="Helpers\AnimatedImageView.cs" />
+    <Compile Include="Helpers\IAccelerometerListener.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -117,9 +119,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ItemGroup>
-    <Folder Include="Resources\layout-land\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\PuppyKittyOverflow.Portable\PuppyKittyOverflow.Portable.csproj">
       <Project>{3E5A7E5F-09BE-4270-8A16-97423B1B87FF}</Project>
