@@ -26,6 +26,43 @@ namespace PuppyKittyOverflow.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::AndroidHUD.Resource.Attribute.barColor = global::PuppyKittyOverflow.Droid.Resource.Attribute.barColor;
+			global::AndroidHUD.Resource.Attribute.barLength = global::PuppyKittyOverflow.Droid.Resource.Attribute.barLength;
+			global::AndroidHUD.Resource.Attribute.barWidth = global::PuppyKittyOverflow.Droid.Resource.Attribute.barWidth;
+			global::AndroidHUD.Resource.Attribute.circleColor = global::PuppyKittyOverflow.Droid.Resource.Attribute.circleColor;
+			global::AndroidHUD.Resource.Attribute.delayMillis = global::PuppyKittyOverflow.Droid.Resource.Attribute.delayMillis;
+			global::AndroidHUD.Resource.Attribute.radius = global::PuppyKittyOverflow.Droid.Resource.Attribute.radius;
+			global::AndroidHUD.Resource.Attribute.rimColor = global::PuppyKittyOverflow.Droid.Resource.Attribute.rimColor;
+			global::AndroidHUD.Resource.Attribute.rimWidth = global::PuppyKittyOverflow.Droid.Resource.Attribute.rimWidth;
+			global::AndroidHUD.Resource.Attribute.spinSpeed = global::PuppyKittyOverflow.Droid.Resource.Attribute.spinSpeed;
+			global::AndroidHUD.Resource.Attribute.text = global::PuppyKittyOverflow.Droid.Resource.Attribute.text;
+			global::AndroidHUD.Resource.Attribute.textColor = global::PuppyKittyOverflow.Droid.Resource.Attribute.textColor;
+			global::AndroidHUD.Resource.Attribute.textSize = global::PuppyKittyOverflow.Droid.Resource.Attribute.textSize;
+			global::AndroidHUD.Resource.Drawable.ic_errorstatus = global::PuppyKittyOverflow.Droid.Resource.Drawable.ic_errorstatus;
+			global::AndroidHUD.Resource.Drawable.ic_successstatus = global::PuppyKittyOverflow.Droid.Resource.Drawable.ic_successstatus;
+			global::AndroidHUD.Resource.Drawable.roundedbg = global::PuppyKittyOverflow.Droid.Resource.Drawable.roundedbg;
+			global::AndroidHUD.Resource.Drawable.roundedbgdark = global::PuppyKittyOverflow.Droid.Resource.Drawable.roundedbgdark;
+			global::AndroidHUD.Resource.Id.loadingImage = global::PuppyKittyOverflow.Droid.Resource.Id.loadingImage;
+			global::AndroidHUD.Resource.Id.loadingProgressBar = global::PuppyKittyOverflow.Droid.Resource.Id.loadingProgressBar;
+			global::AndroidHUD.Resource.Id.loadingProgressWheel = global::PuppyKittyOverflow.Droid.Resource.Id.loadingProgressWheel;
+			global::AndroidHUD.Resource.Id.textViewStatus = global::PuppyKittyOverflow.Droid.Resource.Id.textViewStatus;
+			global::AndroidHUD.Resource.Layout.loading = global::PuppyKittyOverflow.Droid.Resource.Layout.loading;
+			global::AndroidHUD.Resource.Layout.loadingimage = global::PuppyKittyOverflow.Droid.Resource.Layout.loadingimage;
+			global::AndroidHUD.Resource.Layout.loadingprogress = global::PuppyKittyOverflow.Droid.Resource.Layout.loadingprogress;
+			global::AndroidHUD.Resource.String.library_name = global::PuppyKittyOverflow.Droid.Resource.String.library_name;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_barColor = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_barColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_barLength = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_barLength;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_barWidth = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_barWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_circleColor = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_circleColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_delayMillis = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_delayMillis;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_radius = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_radius;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_rimColor = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_rimColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_rimWidth = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_rimWidth;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_spinSpeed = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_spinSpeed;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_text = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_text;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_textColor = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_textColor;
+			global::AndroidHUD.Resource.Styleable.ProgressWheel_textSize = global::PuppyKittyOverflow.Droid.Resource.Styleable.ProgressWheel_textSize;
 		}
 		
 		public partial class Animation
@@ -164,14 +201,29 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f01002c
 			public const int backgroundStacked = 2130772012;
 			
+			// aapt resource value: 0x7f01006d
+			public const int barColor = 2130772077;
+			
+			// aapt resource value: 0x7f010075
+			public const int barLength = 2130772085;
+			
+			// aapt resource value: 0x7f010074
+			public const int barWidth = 2130772084;
+			
 			// aapt resource value: 0x7f010014
 			public const int buttonBarButtonStyle = 2130771988;
 			
 			// aapt resource value: 0x7f010013
 			public const int buttonBarStyle = 2130771987;
 			
+			// aapt resource value: 0x7f010072
+			public const int circleColor = 2130772082;
+			
 			// aapt resource value: 0x7f01002e
 			public const int customNavigationLayout = 2130772014;
+			
+			// aapt resource value: 0x7f010071
+			public const int delayMillis = 2130772081;
 			
 			// aapt resource value: 0x7f010050
 			public const int disableChildrenWhenDisabled = 2130772048;
@@ -284,6 +336,15 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f010057
 			public const int queryHint = 2130772055;
 			
+			// aapt resource value: 0x7f010073
+			public const int radius = 2130772083;
+			
+			// aapt resource value: 0x7f01006e
+			public const int rimColor = 2130772078;
+			
+			// aapt resource value: 0x7f01006f
+			public const int rimWidth = 2130772079;
+			
 			// aapt resource value: 0x7f010058
 			public const int searchDropdownBackground = 2130772056;
 			
@@ -326,6 +387,9 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f010051
 			public const int showDividers = 2130772049;
 			
+			// aapt resource value: 0x7f010070
+			public const int spinSpeed = 2130772080;
+			
 			// aapt resource value: 0x7f010054
 			public const int spinnerDropDownItemStyle = 2130772052;
 			
@@ -340,6 +404,9 @@ namespace PuppyKittyOverflow.Droid
 			
 			// aapt resource value: 0x7f010027
 			public const int subtitleTextStyle = 2130772007;
+			
+			// aapt resource value: 0x7f01006a
+			public const int text = 2130772074;
 			
 			// aapt resource value: 0x7f010069
 			public const int textAllCaps = 2130772073;
@@ -362,8 +429,14 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f010011
 			public const int textAppearanceSmallPopupMenu = 2130771985;
 			
+			// aapt resource value: 0x7f01006b
+			public const int textColor = 2130772075;
+			
 			// aapt resource value: 0x7f010064
 			public const int textColorSearchUrl = 2130772068;
+			
+			// aapt resource value: 0x7f01006c
+			public const int textSize = 2130772076;
 			
 			// aapt resource value: 0x7f010021
 			public const int title = 2130772001;
@@ -787,7 +860,19 @@ namespace PuppyKittyOverflow.Droid
 			public const int ic_action_action_about = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int ic_launcher = 2130837595;
+			public const int ic_errorstatus = 2130837595;
+			
+			// aapt resource value: 0x7f02005c
+			public const int ic_launcher = 2130837596;
+			
+			// aapt resource value: 0x7f02005d
+			public const int ic_successstatus = 2130837597;
+			
+			// aapt resource value: 0x7f02005e
+			public const int roundedbg = 2130837598;
+			
+			// aapt resource value: 0x7f02005f
+			public const int roundedbgdark = 2130837599;
 			
 			static Drawable()
 			{
@@ -802,8 +887,8 @@ namespace PuppyKittyOverflow.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050049
-			public const int action_about = 2131034185;
+			// aapt resource value: 0x7f05004d
+			public const int action_about = 2131034189;
 			
 			// aapt resource value: 0x7f05001a
 			public const int action_bar = 2131034138;
@@ -853,11 +938,11 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f050011
 			public const int beginning = 2131034129;
 			
-			// aapt resource value: 0x7f050045
-			public const int button_kitty = 2131034181;
+			// aapt resource value: 0x7f050049
+			public const int button_kitty = 2131034185;
 			
-			// aapt resource value: 0x7f050044
-			public const int button_puppy = 2131034180;
+			// aapt resource value: 0x7f050048
+			public const int button_puppy = 2131034184;
 			
 			// aapt resource value: 0x7f05002b
 			public const int checkbox = 2131034155;
@@ -904,23 +989,32 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f050025
 			public const int image = 2131034149;
 			
-			// aapt resource value: 0x7f050047
-			public const int imageview_animal = 2131034183;
+			// aapt resource value: 0x7f05004b
+			public const int imageview_animal = 2131034187;
 			
-			// aapt resource value: 0x7f050048
-			public const int imageview_animal_animated = 2131034184;
+			// aapt resource value: 0x7f05004c
+			public const int imageview_animal_animated = 2131034188;
 			
 			// aapt resource value: 0x7f050031
 			public const int left_icon = 2131034161;
 			
-			// aapt resource value: 0x7f050043
-			public const int linearLayout1 = 2131034179;
+			// aapt resource value: 0x7f050047
+			public const int linearLayout1 = 2131034183;
 			
 			// aapt resource value: 0x7f050001
 			public const int listMode = 2131034113;
 			
 			// aapt resource value: 0x7f050027
 			public const int list_item = 2131034151;
+			
+			// aapt resource value: 0x7f050045
+			public const int loadingImage = 2131034181;
+			
+			// aapt resource value: 0x7f050043
+			public const int loadingProgressBar = 2131034179;
+			
+			// aapt resource value: 0x7f050046
+			public const int loadingProgressWheel = 2131034182;
 			
 			// aapt resource value: 0x7f050012
 			public const int middle = 2131034130;
@@ -940,8 +1034,8 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f050035
 			public const int progress_horizontal = 2131034165;
 			
-			// aapt resource value: 0x7f050046
-			public const int progressbar = 2131034182;
+			// aapt resource value: 0x7f05004a
+			public const int progressbar = 2131034186;
 			
 			// aapt resource value: 0x7f05002d
 			public const int radio = 2131034157;
@@ -1005,6 +1099,9 @@ namespace PuppyKittyOverflow.Droid
 			
 			// aapt resource value: 0x7f050042
 			public const int textView1 = 2131034178;
+			
+			// aapt resource value: 0x7f050044
+			public const int textViewStatus = 2131034180;
 			
 			// aapt resource value: 0x7f050029
 			public const int title = 2131034153;
@@ -1129,10 +1226,19 @@ namespace PuppyKittyOverflow.Droid
 			public const int About = 2130903064;
 			
 			// aapt resource value: 0x7f030019
-			public const int Main = 2130903065;
+			public const int loading = 2130903065;
 			
 			// aapt resource value: 0x7f03001a
-			public const int support_simple_spinner_dropdown_item = 2130903066;
+			public const int loadingimage = 2130903066;
+			
+			// aapt resource value: 0x7f03001b
+			public const int loadingprogress = 2130903067;
+			
+			// aapt resource value: 0x7f03001c
+			public const int Main = 2130903068;
+			
+			// aapt resource value: 0x7f03001d
+			public const int support_simple_spinner_dropdown_item = 2130903069;
 			
 			static Layout()
 			{
@@ -1202,20 +1308,23 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f0a000b
 			public const int abc_shareactionprovider_share_with_application = 2131361803;
 			
-			// aapt resource value: 0x7f0a0010
-			public const int about = 2131361808;
-			
 			// aapt resource value: 0x7f0a0011
-			public const int about_text = 2131361809;
+			public const int about = 2131361809;
+			
+			// aapt resource value: 0x7f0a0012
+			public const int about_text = 2131361810;
+			
+			// aapt resource value: 0x7f0a0010
+			public const int app_name = 2131361808;
 			
 			// aapt resource value: 0x7f0a000f
-			public const int app_name = 2131361807;
-			
-			// aapt resource value: 0x7f0a000e
-			public const int kitty = 2131361806;
+			public const int kitty = 2131361807;
 			
 			// aapt resource value: 0x7f0a000d
-			public const int puppy = 2131361805;
+			public const int library_name = 2131361805;
+			
+			// aapt resource value: 0x7f0a000e
+			public const int puppy = 2131361806;
 			
 			static String()
 			{
@@ -1917,6 +2026,56 @@ namespace PuppyKittyOverflow.Droid
 			
 			// aapt resource value: 0
 			public const int MenuView_android_windowAnimationStyle = 0;
+			
+			public static int[] ProgressWheel = new int[] {
+					2130772074,
+					2130772075,
+					2130772076,
+					2130772077,
+					2130772078,
+					2130772079,
+					2130772080,
+					2130772081,
+					2130772082,
+					2130772083,
+					2130772084,
+					2130772085};
+			
+			// aapt resource value: 3
+			public const int ProgressWheel_barColor = 3;
+			
+			// aapt resource value: 11
+			public const int ProgressWheel_barLength = 11;
+			
+			// aapt resource value: 10
+			public const int ProgressWheel_barWidth = 10;
+			
+			// aapt resource value: 8
+			public const int ProgressWheel_circleColor = 8;
+			
+			// aapt resource value: 7
+			public const int ProgressWheel_delayMillis = 7;
+			
+			// aapt resource value: 9
+			public const int ProgressWheel_radius = 9;
+			
+			// aapt resource value: 4
+			public const int ProgressWheel_rimColor = 4;
+			
+			// aapt resource value: 5
+			public const int ProgressWheel_rimWidth = 5;
+			
+			// aapt resource value: 6
+			public const int ProgressWheel_spinSpeed = 6;
+			
+			// aapt resource value: 0
+			public const int ProgressWheel_text = 0;
+			
+			// aapt resource value: 1
+			public const int ProgressWheel_textColor = 1;
+			
+			// aapt resource value: 2
+			public const int ProgressWheel_textSize = 2;
 			
 			public static int[] SearchView = new int[] {
 					16843039,

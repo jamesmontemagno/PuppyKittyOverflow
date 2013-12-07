@@ -9,6 +9,9 @@ using Java.IO;
 
 namespace PuppyKittyOverflow.Droid.Helpers
 {
+
+
+
   public class AnimatedImageView : View
   {
 
@@ -68,9 +71,22 @@ namespace PuppyKittyOverflow.Droid.Helpers
 
     }
 
+    private bool playing = true;
+    public void Start()
+    {
+      playing = true;
+      this.Invalidate();
+    }
+
+    public void Stop()
+    {
+      playing = false;
+    }
+
     protected override void OnDraw(Canvas canvas)
     {
       canvas.DrawColor(Color.Transparent);
+
       Paint p = new Paint(); 
       p.AntiAlias = true; 
       SetLayerType(LayerType.Software, p);
@@ -88,9 +104,25 @@ namespace PuppyKittyOverflow.Droid.Helpers
         }
         var relTime = (int)((now - movieStart) % dur);
         movie.SetTime(relTime);
-        movie.Draw(canvas, (Width - movie.Width())/2.0f,
-                    (Height - movie.Height())/2.0f);
-        Invalidate();
+        var movieWidth = (float)movie.Width();
+        var movieHeight = (float)movie.Height();
+        var scale = 1.0f;
+        if (movieWidth > movieHeight)
+        {
+          scale = this.Width/movieWidth;
+        }
+        else
+        {
+          scale = this.Height/movieHeight;
+        }
+
+
+        
+        canvas.Scale(scale, scale);
+        movie.Draw(canvas, (Width - movie.Width()) / 2.0f,
+                    (Height - movie.Height()) / 2.0f, p);
+        if(playing)
+          Invalidate();
       }
     }
   }

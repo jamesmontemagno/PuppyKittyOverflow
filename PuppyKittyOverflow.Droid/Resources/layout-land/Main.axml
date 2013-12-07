@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:padding="8dp"
+    android:padding="10dp"
     android:background="@color/background">
     <LinearLayout
         android:orientation="horizontal"
@@ -40,7 +40,7 @@
         android:background="@drawable/background_card"
         android:maxWidth="600dp">
         <ImageView
-            android:padding="8dp"
+            android:padding="10dp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/imageview_animal"
@@ -48,7 +48,7 @@
             android:gravity="center"
             android:scaleType="fitCenter" />
         <puppykittyoverflow.droid.helpers.AnimatedImageView
-            android:padding="8dp"
+            android:padding="10dp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/imageview_animal_animated"

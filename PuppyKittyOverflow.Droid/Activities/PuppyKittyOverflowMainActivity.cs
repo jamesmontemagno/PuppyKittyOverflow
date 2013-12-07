@@ -5,6 +5,7 @@ using Android.Content;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using AndroidHUD;
 using PuppyKittyOverflow.Droid.Helpers;
 using PuppyKittyOverflow.Portable;
 using Object = Java.Lang.Object;
@@ -29,6 +30,7 @@ namespace PuppyKittyOverflow.Droid.Activities
     private AnimatedImageView imageViewAnimated;
     private PuppyKittyState state;
     private AccelerometerManager accelerometerManager;
+    
 
     protected override void OnCreate(Bundle bundle)
     {
@@ -77,7 +79,7 @@ namespace PuppyKittyOverflow.Droid.Activities
 
       state.SetDefault = true;
       state.Image = animal == OverflowHelper.Animal.Cat ? "cat" : "dog";
-
+      AndroidHUD.AndHUD.Shared.Show(this, "Finding adorable animals!");
       try
       {
         var image =
@@ -99,6 +101,7 @@ namespace PuppyKittyOverflow.Droid.Activities
       progressBar.Indeterminate = false;
       buttonKitty.Enabled = true;
       buttonPuppy.Enabled = true;
+      AndHUD.Shared.Dismiss(this);
     }
 
     private async Task SetImage()
@@ -115,7 +118,6 @@ namespace PuppyKittyOverflow.Droid.Activities
       {
         try
         {
-
           var httpClient = new HttpClient();
           await imageViewAnimated.Initialize(await httpClient.GetStreamAsync(state.Image));
           imageViewAnimated.Visibility = ViewStates.Visible;
@@ -156,6 +158,7 @@ namespace PuppyKittyOverflow.Droid.Activities
       if (accelerometerManager.IsSupported)
         accelerometerManager.StartListening();
 
+      imageViewAnimated.Start();
     }
 
     protected override void OnStop()
@@ -163,6 +166,8 @@ namespace PuppyKittyOverflow.Droid.Activities
       base.OnStop();
       if (accelerometerManager.IsListening)
         accelerometerManager.StopListening();
+
+      imageViewAnimated.Stop();
     }
 
     protected override void OnDestroy()
