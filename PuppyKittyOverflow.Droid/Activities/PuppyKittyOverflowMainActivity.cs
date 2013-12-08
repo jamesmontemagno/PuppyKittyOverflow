@@ -2,26 +2,28 @@
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
-using Android.OS;
+using Android.Runtime;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using AndroidHUD;
+using Android.OS;
+using Android.Support.V4.View;
 using PuppyKittyOverflow.Droid.Helpers;
 using PuppyKittyOverflow.Portable;
 using Object = Java.Lang.Object;
-using System.Net.Http;
 
 namespace PuppyKittyOverflow.Droid.Activities
 {
 
-  public class PuppyKittyState : Object
+  public class PuppyKittyState : Java.Lang.Object
   {
     public string Image { get; set; }
     public bool SetDefault { get; set; }
+    public Task CurrentTask { get; set; }
   }
 
   [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", Theme = "@style/Theme")]
-  public class PuppyKittyOverflowMainActivity : Activity, IAccelerometerListener
+  public class PuppyKittyOverflowMainActivity : ActionBarActivity, IAccelerometerListener
   {
     private ProgressBar progressBar;
     private ImageView imageView;
@@ -30,9 +32,10 @@ namespace PuppyKittyOverflow.Droid.Activities
     private AnimatedImageView imageViewAnimated;
     private PuppyKittyState state;
     private AccelerometerManager accelerometerManager;
+    private Task currentTask;
     
 
-    protected override void OnCreate(Bundle bundle)
+    protected async override void OnCreate(Bundle bundle)
     {
       base.OnCreate(bundle);
 
@@ -43,10 +46,14 @@ namespace PuppyKittyOverflow.Droid.Activities
       accelerometerManager = new AccelerometerManager(this, this);
 
       buttonPuppy = FindViewById<Button>(Resource.Id.button_puppy);
-      buttonPuppy.Click += (sender, args) => LoadImage(OverflowHelper.Animal.Dog);
+      buttonPuppy.Click += async (sender, args) =>
+      {
+        state.CurrentTask = LoadImage(OverflowHelper.Animal.Dog);
+        await state.CurrentTask;
+      };
 
       buttonKitty = FindViewById<Button>(Resource.Id.button_kitty);
-      buttonKitty.Click += (sender, args) => LoadImage(OverflowHelper.Animal.Cat);
+      buttonKitty.Click += async (sender, args) => await LoadImage(OverflowHelper.Animal.Cat);
 
       progressBar = FindViewById<ProgressBar>(Resource.Id.progressbar);
       imageView = FindViewById<ImageView>(Resource.Id.imageview_animal);
@@ -54,20 +61,22 @@ namespace PuppyKittyOverflow.Droid.Activities
       progressBar.Visibility = ViewStates.Invisible;
       imageView.Visibility = ViewStates.Gone;
       imageViewAnimated.Visibility = ViewStates.Gone;
-      state = LastNonConfigurationInstance as PuppyKittyState;
+      state = LastCustomNonConfigurationInstance as PuppyKittyState;
 
       if (state != null)
       {
-        SetImage();
+        if (state.CurrentTask == null || state.CurrentTask.IsCompleted)
+          await SetImage();
       }
       else
       {
         state = new PuppyKittyState();
+        state.SetDefault = true;
       }
 
     }
 
-    private async void LoadImage(OverflowHelper.Animal animal)
+    private async Task LoadImage(OverflowHelper.Animal animal)
     {
       
       progressBar.Visibility = ViewStates.Visible;
@@ -79,7 +88,6 @@ namespace PuppyKittyOverflow.Droid.Activities
 
       state.SetDefault = true;
       state.Image = animal == OverflowHelper.Animal.Cat ? "cat" : "dog";
-      AndroidHUD.AndHUD.Shared.Show(this, "Finding adorable animals!");
       try
       {
         var image =
@@ -101,7 +109,7 @@ namespace PuppyKittyOverflow.Droid.Activities
       progressBar.Indeterminate = false;
       buttonKitty.Enabled = true;
       buttonPuppy.Enabled = true;
-      AndHUD.Shared.Dismiss(this);
+      //AndHUD.Shared.Dismiss(this);
     }
 
     private async Task SetImage()
@@ -118,8 +126,8 @@ namespace PuppyKittyOverflow.Droid.Activities
       {
         try
         {
-          var httpClient = new HttpClient();
-          await imageViewAnimated.Initialize(await httpClient.GetStreamAsync(state.Image));
+          var stream = await OverflowHelper.GetStreamAsync(state.Image);
+          await imageViewAnimated.Initialize(stream);
           imageViewAnimated.Visibility = ViewStates.Visible;
         }
         catch (Exception)
@@ -128,19 +136,17 @@ namespace PuppyKittyOverflow.Droid.Activities
           imageView.Visibility = ViewStates.Visible;
         }
       }
+
+      this.InvalidateOptionsMenu();
     }
 
-    public override Object OnRetainNonConfigurationInstance()
+    public override Object OnRetainCustomNonConfigurationInstance()
     {
-      base.OnRetainNonConfigurationInstance();
+      base.OnRetainCustomNonConfigurationInstance();
       return state;
     }
 
-    public override bool OnCreateOptionsMenu(IMenu menu)
-    {
-      MenuInflater.Inflate(Resource.Menu.main_menu, menu);
-      return true;
-    }
+ 
 
     public override bool OnOptionsItemSelected(IMenuItem item)
     {
@@ -150,6 +156,27 @@ namespace PuppyKittyOverflow.Droid.Activities
         StartActivity(intent);
       }
       return base.OnOptionsItemSelected(item);
+    }
+
+    Android.Support.V7.Widget.ShareActionProvider actionProvider;
+    public override bool OnCreateOptionsMenu(IMenu menu)
+    {
+      this.MenuInflater.Inflate(Resource.Menu.main_menu, menu);
+
+      var shareItem = menu.FindItem(Resource.Id.action_share);
+      var test = MenuItemCompat.GetActionProvider(shareItem);
+      actionProvider = test.JavaCast<Android.Support.V7.Widget.ShareActionProvider>();
+      if (state.SetDefault)
+        shareItem.SetVisible(false);
+
+      var intent = new Intent(Intent.ActionSend);
+      intent.SetType("text/plain");
+      intent.PutExtra(Intent.ExtraText, "#PuppyKittyOverflow Adorable Animals: "  + (state.SetDefault ? string.Empty : state.Image));
+
+      actionProvider.SetShareIntent(intent);
+
+
+      return base.OnCreateOptionsMenu(menu);
     }
 
     protected override void OnResume()
@@ -182,12 +209,13 @@ namespace PuppyKittyOverflow.Droid.Activities
       
     }
 
-    public void OnShake(float force)
+    public async void OnShake(float force)
     {
       if (!buttonKitty.Enabled)
         return;
 
-      LoadImage(OverflowHelper.Animal.Otter);
+      state.CurrentTask = LoadImage(OverflowHelper.Animal.Otter);
+      await state.CurrentTask;
     }
   }
 }

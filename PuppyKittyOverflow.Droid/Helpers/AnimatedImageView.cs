@@ -110,17 +110,21 @@ namespace PuppyKittyOverflow.Droid.Helpers
         if (movieWidth > movieHeight)
         {
           scale = this.Width/movieWidth;
+          if (scale*movieHeight > Height)
+            scale = Height/movieHeight;
         }
         else
         {
           scale = this.Height/movieHeight;
+          if (scale*movieWidth > Width)
+            scale = Height/movieWidth;
         }
 
 
         
         canvas.Scale(scale, scale);
-        movie.Draw(canvas, (Width - movie.Width()) / 2.0f,
-                    (Height - movie.Height()) / 2.0f, p);
+        movie.Draw(canvas, 0,0, p);
+
         if(playing)
           Invalidate();
       }

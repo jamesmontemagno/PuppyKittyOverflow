@@ -76,8 +76,8 @@ namespace PuppyKittyOverflow.Droid.Helpers
       public ShakeSensorEventListener(IAccelerometerListener listener)
       {
         this.listener = listener;
-        Threshold = 15.0f;
-        Interval = 200;
+        Threshold = 35.0f;
+        Interval = 300;
       }
       public void OnAccuracyChanged(Sensor sensor, SensorStatus accuracy)
       {

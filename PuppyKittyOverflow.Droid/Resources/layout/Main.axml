@@ -38,9 +38,9 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/background_card"
-        android:maxWidth="600dp">
+        android:maxWidth="600dp"
+        android:padding="10dp">
         <ImageView
-            android:padding="10dp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/imageview_animal"
@@ -48,7 +48,6 @@
             android:gravity="center"
             android:scaleType="fitXY" />
         <puppykittyoverflow.droid.helpers.AnimatedImageView
-            android:padding="10dp"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:id="@+id/imageview_animal_animated"

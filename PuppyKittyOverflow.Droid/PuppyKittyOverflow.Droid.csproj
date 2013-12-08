@@ -46,9 +46,6 @@
     <AndroidSupportedAbis>armeabi;armeabi-v7a;x86</AndroidSupportedAbis>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AndHUD">
-      <HintPath>..\Components\AndHUD-1.2\lib\android\AndHUD.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
@@ -78,7 +75,6 @@
     <AndroidResource Include="Resources\layout\About.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout-land\Main.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -108,10 +104,6 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <XamarinComponentReference Include="AndHUD">
-      <Visible>False</Visible>
-      <Version>1.2</Version>
-    </XamarinComponentReference>
     <XamarinComponentReference Include="xamandroidsupportv7appcompat">
       <Version>7.18.0</Version>
       <Visible>False</Visible>
