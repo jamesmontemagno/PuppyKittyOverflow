@@ -34,7 +34,7 @@ namespace PuppyKittyOverflow.Droid.Activities
     private PuppyKittyState state;
     private AccelerometerManager accelerometerManager;
     private Task currentTask;
-    
+
 
     protected async override void OnCreate(Bundle bundle)
     {
@@ -79,7 +79,7 @@ namespace PuppyKittyOverflow.Droid.Activities
 
     private async Task LoadImage(OverflowHelper.Animal animal)
     {
-      
+
       progressBar.Visibility = ViewStates.Visible;
       progressBar.Indeterminate = true;
       imageView.Visibility = ViewStates.Gone;
@@ -89,19 +89,20 @@ namespace PuppyKittyOverflow.Droid.Activities
 
       state.SetDefault = true;
       state.Image = animal == OverflowHelper.Animal.Cat ? "cat" : "dog";
-		var eventType = string.Empty;
-		switch (animal) {
-		case OverflowHelper.Animal.Cat:
-			eventType = "cat";
-			break;
-		case OverflowHelper.Animal.Dog:
-			eventType = "dog";
-			break;
-		case OverflowHelper.Animal.Otter:
-			eventType = "otter";
-			break;
-		}
-		EasyTracker.GetInstance (this).Send (MapBuilder.CreateEvent ("ui_action", "load_animal", eventType, null).Build ());
+      var eventType = string.Empty;
+      switch (animal)
+      {
+        case OverflowHelper.Animal.Cat:
+          eventType = "cat";
+          break;
+        case OverflowHelper.Animal.Dog:
+          eventType = "dog";
+          break;
+        case OverflowHelper.Animal.Otter:
+          eventType = "otter";
+          break;
+      }
+      EasyTracker.GetInstance(this).Send(MapBuilder.CreateEvent("ui_action", "load_animal", eventType, null).Build());
       try
       {
         var image =
@@ -160,7 +161,7 @@ namespace PuppyKittyOverflow.Droid.Activities
       return state;
     }
 
- 
+
 
     public override bool OnOptionsItemSelected(IMenuItem item)
     {
@@ -185,7 +186,7 @@ namespace PuppyKittyOverflow.Droid.Activities
 
       var intent = new Intent(Intent.ActionSend);
       intent.SetType("text/plain");
-      intent.PutExtra(Intent.ExtraText, "#PuppyKittyOverflow Adorable Animals: "  + (state.SetDefault ? string.Empty : state.Image));
+      intent.PutExtra(Intent.ExtraText, "#PuppyKittyOverflow Adorable Animals: " + (state.SetDefault ? string.Empty : state.Image));
 
       actionProvider.SetShareIntent(intent);
 
@@ -202,11 +203,11 @@ namespace PuppyKittyOverflow.Droid.Activities
       imageViewAnimated.Start();
     }
 
-	protected override void OnStart ()
-	{
-	  base.OnStart ();
-	  EasyTracker.GetInstance (this).ActivityStart (this);
-	}
+    protected override void OnStart()
+    {
+      base.OnStart();
+      EasyTracker.GetInstance(this).ActivityStart(this);
+    }
 
     protected override void OnStop()
     {
@@ -215,7 +216,8 @@ namespace PuppyKittyOverflow.Droid.Activities
         accelerometerManager.StopListening();
 
       imageViewAnimated.Stop();
-	  EasyTracker.GetInstance (this).ActivityStop (this);
+      EasyTracker.GetInstance(this).ActivityStop(this);
+      GAServiceManager.Instance.SetLocalDispatchPeriod(60);
     }
 
     protected override void OnDestroy()
@@ -227,7 +229,7 @@ namespace PuppyKittyOverflow.Droid.Activities
 
     public void OnAccelerationChanged(float x, float y, float z)
     {
-      
+
     }
 
     public async void OnShake(float force)
