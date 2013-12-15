@@ -1,11 +1,12 @@
 using Android.App;
 using Android.OS;
 using Google.Analytics.Tracking;
+using Android.Support.V7.App;
 
 namespace PuppyKittyOverflow.Droid.Activities
 {
     [Activity(Label = "@string/about", Icon = "@drawable/ic_launcher", Theme = "@style/Theme")]
-    public class AboutActivity : Activity
+  public class AboutActivity : ActionBarActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
@@ -21,9 +22,6 @@ namespace PuppyKittyOverflow.Droid.Activities
 			// Setup Google Analytics Easy Tracker
 			EasyTracker.GetInstance (this).ActivityStart (this);
 
-			// By default, data is dispatched from the Google Analytics SDK for Android every 30 minutes.
-			// You can override this by setting the dispatch period in seconds.
-			GAServiceManager.Instance.SetLocalDispatchPeriod (30);
 		}
 
 		protected override void OnStop ()

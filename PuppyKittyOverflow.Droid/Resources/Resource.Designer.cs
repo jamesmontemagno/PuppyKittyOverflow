@@ -808,8 +808,8 @@ namespace PuppyKittyOverflow.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050049
-			public const int action_about = 2131034185;
+			// aapt resource value: 0x7f05004a
+			public const int action_about = 2131034186;
 			
 			// aapt resource value: 0x7f05001a
 			public const int action_bar = 2131034138;
@@ -849,6 +849,9 @@ namespace PuppyKittyOverflow.Droid
 			
 			// aapt resource value: 0x7f050022
 			public const int action_mode_close_button = 2131034146;
+			
+			// aapt resource value: 0x7f050049
+			public const int action_share = 2131034185;
 			
 			// aapt resource value: 0x7f050023
 			public const int activity_chooser_view_content = 2131034147;
@@ -1211,8 +1214,8 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f0a0011
 			public const int about = 2131361809;
 			
-			// aapt resource value: 0x7f0a0012
-			public const int about_text = 2131361810;
+			// aapt resource value: 0x7f0a0013
+			public const int about_text = 2131361811;
 			
 			// aapt resource value: 0x7f0a0010
 			public const int app_name = 2131361808;
@@ -1225,6 +1228,9 @@ namespace PuppyKittyOverflow.Droid
 			
 			// aapt resource value: 0x7f0a000e
 			public const int puppy = 2131361806;
+			
+			// aapt resource value: 0x7f0a0012
+			public const int share = 2131361810;
 			
 			static String()
 			{
