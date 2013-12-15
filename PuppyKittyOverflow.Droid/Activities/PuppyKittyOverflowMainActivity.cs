@@ -1,15 +1,16 @@
-﻿using System;
+﻿﻿using System;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
+using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.View;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using Android.OS;
-using Android.Support.V4.View;
-using PuppyKittyOverflow.Droid.Helpers;
+using Google.Analytics.Tracking;
 using PuppyKittyOverflow.Portable;
+using PuppyKittyOverflow.Droid.Helpers;
 using Object = Java.Lang.Object;
 
 namespace PuppyKittyOverflow.Droid.Activities
@@ -88,6 +89,19 @@ namespace PuppyKittyOverflow.Droid.Activities
 
       state.SetDefault = true;
       state.Image = animal == OverflowHelper.Animal.Cat ? "cat" : "dog";
+		var eventType = string.Empty;
+		switch (animal) {
+		case OverflowHelper.Animal.Cat:
+			eventType = "cat";
+			break;
+		case OverflowHelper.Animal.Dog:
+			eventType = "dog";
+			break;
+		case OverflowHelper.Animal.Otter:
+			eventType = "otter";
+			break;
+		}
+		EasyTracker.GetInstance (this).Send (MapBuilder.CreateEvent ("ui_action", "load_animal", eventType, null).Build ());
       try
       {
         var image =
@@ -188,6 +202,12 @@ namespace PuppyKittyOverflow.Droid.Activities
       imageViewAnimated.Start();
     }
 
+	protected override void OnStart ()
+	{
+	  base.OnStart ();
+	  EasyTracker.GetInstance (this).ActivityStart (this);
+	}
+
     protected override void OnStop()
     {
       base.OnStop();
@@ -195,6 +215,7 @@ namespace PuppyKittyOverflow.Droid.Activities
         accelerometerManager.StopListening();
 
       imageViewAnimated.Stop();
+	  EasyTracker.GetInstance (this).ActivityStop (this);
     }
 
     protected override void OnDestroy()
