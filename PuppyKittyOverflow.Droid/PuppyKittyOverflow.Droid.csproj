@@ -59,6 +59,9 @@
     <Reference Include="Xamarin.Android.Support.v7.AppCompat">
       <HintPath>..\Components\xamandroidsupportv7appcompat-7.18.0\lib\android\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
     </Reference>
+    <Reference Include="GoogleAnalytics.Android">
+      <HintPath>..\Components\googleanalytics-3.0.2\lib\android\GoogleAnalytics.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\AboutActivity.cs" />
@@ -66,6 +69,7 @@
     <Compile Include="Helpers\AnimatedImageView.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -74,6 +78,7 @@
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout-land\Main.axml" />
+    <AndroidResource Include="Resources\values\analytics.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -105,6 +110,11 @@
   <ItemGroup>
     <XamarinComponentReference Include="xamandroidsupportv7appcompat">
       <Version>7.18.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="googleanalytics">
+      <InstallationInProgress>True</InstallationInProgress>
+      <Version>3.0.2</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

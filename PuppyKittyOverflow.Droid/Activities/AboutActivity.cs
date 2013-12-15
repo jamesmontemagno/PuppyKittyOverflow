@@ -1,14 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using Google.Analytics.Tracking;
 
 namespace PuppyKittyOverflow.Droid.Activities
 {
@@ -21,5 +13,28 @@ namespace PuppyKittyOverflow.Droid.Activities
             SetContentView(Resource.Layout.About);
             // Create your application here
         }
+
+		protected override void OnStart ()
+		{
+			base.OnStart ();
+
+			// Setup Google Analytics Easy Tracker
+			EasyTracker.GetInstance (this).ActivityStart (this);
+
+			// By default, data is dispatched from the Google Analytics SDK for Android every 30 minutes.
+			// You can override this by setting the dispatch period in seconds.
+			GAServiceManager.Instance.SetLocalDispatchPeriod (30);
+		}
+
+		protected override void OnStop ()
+		{
+			base.OnStop ();
+
+			// Stop Google Analytics Easy Tracker
+			EasyTracker.GetInstance (this).ActivityStop (this);
+		}
+
     }
+
+
 }

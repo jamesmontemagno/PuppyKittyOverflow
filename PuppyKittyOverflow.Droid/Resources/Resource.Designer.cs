@@ -411,6 +411,12 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f060002
 			public const int abc_split_action_bar_is_narrow = 2131099650;
 			
+			// aapt resource value: 0x7f060006
+			public const int ga_autoActivityTracking = 2131099654;
+			
+			// aapt resource value: 0x7f060007
+			public const int ga_reportUncaughtExceptions = 2131099655;
+			
 			static Boolean()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -1202,20 +1208,23 @@ namespace PuppyKittyOverflow.Droid
 			// aapt resource value: 0x7f0a000b
 			public const int abc_shareactionprovider_share_with_application = 2131361803;
 			
-			// aapt resource value: 0x7f0a0010
-			public const int about = 2131361808;
-			
 			// aapt resource value: 0x7f0a0011
-			public const int about_text = 2131361809;
+			public const int about = 2131361809;
 			
-			// aapt resource value: 0x7f0a000f
-			public const int app_name = 2131361807;
+			// aapt resource value: 0x7f0a0012
+			public const int about_text = 2131361810;
 			
-			// aapt resource value: 0x7f0a000e
-			public const int kitty = 2131361806;
+			// aapt resource value: 0x7f0a0010
+			public const int app_name = 2131361808;
 			
 			// aapt resource value: 0x7f0a000d
-			public const int puppy = 2131361805;
+			public const int ga_trackingId = 2131361805;
+			
+			// aapt resource value: 0x7f0a000f
+			public const int kitty = 2131361807;
+			
+			// aapt resource value: 0x7f0a000e
+			public const int puppy = 2131361806;
 			
 			static String()
 			{
