@@ -123,7 +123,14 @@ namespace PuppyKittyOverflow.Droid.Helpers
 
         
         canvas.Scale(scale, scale);
-        movie.Draw(canvas, 0,0, p);
+        try
+        {
+          
+          movie.Draw(canvas, 0, 0, p);
+        }catch(Exception ex)
+        {
+
+        }
 
         if(playing)
           Invalidate();

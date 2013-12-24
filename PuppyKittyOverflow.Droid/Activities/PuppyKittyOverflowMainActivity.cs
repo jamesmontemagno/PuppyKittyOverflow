@@ -23,7 +23,7 @@ namespace PuppyKittyOverflow.Droid.Activities
     public Task CurrentTask { get; set; }
   }
 
-  [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", Theme = "@style/Theme")]
+  [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", Theme = "@style/Theme", HardwareAccelerated = false)]
   public class PuppyKittyOverflowMainActivity : ActionBarActivity, IAccelerometerListener
   {
     private ProgressBar progressBar;
