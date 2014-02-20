@@ -1,3 +1,4 @@
+#define STARTER
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,9 @@ namespace PuppyKittyOverflow.Touch
 
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
+			#if !STARTER
 			FlurryAnalytics.Flurry.StartSession ("FNDB7G8XD99Z7ZHQV4BT");
+			#endif
 			return true;
 		}
 		// This method is invoked when the application is about to move from active to inactive state.

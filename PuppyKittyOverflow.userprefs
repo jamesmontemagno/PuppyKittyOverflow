@@ -1,40 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PuppyKittyOverflow.Droid/Activities/PuppyKittyOverflowMainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone.6.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PuppyKittyOverflow.Portable/OverflowHelper.cs">
     <Files>
-      <File FileName="PuppyKittyOverflow.Touch/PuppyKittyOverflow.TouchViewController.cs" Line="188" Column="17" />
-      <File FileName="PuppyKittyOverflow.Touch/AnimatedImageView.cs" Line="1" Column="1" />
-      <File FileName="PuppyKittyOverflow.Droid/Activities/PuppyKittyOverflowMainActivity.cs" Line="12" Column="26" />
-      <File FileName="PuppyKittyOverflow.Droid/Helpers/AnimatedImageView.cs" Line="1" Column="1" />
-      <File FileName="PuppyKittyOverflow.Portable/OverflowHelper.cs" Line="1" Column="1" />
-      <File FileName="PuppyKittyOverflow.Droid/App.cs" Line="11" Column="4" />
-      <File FileName="PuppyKittyOverflow.Droid/Resources/values/analytics.xml" Line="4" Column="37" />
-      <File FileName="PuppyKittyOverflow.Droid/Activities/AboutActivity.cs" Line="23" Column="4" />
-      <File FileName="PuppyKittyOverflow.Droid/Resources/Resource.Designer.cs" Line="15" Column="2" />
+      <File FileName="PuppyKittyOverflow.Portable/OverflowHelper.cs" Line="66" Column="4" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="PuppyKittyOverflow.Droid" expanded="True" selected="True">
-            <Node name="References" expanded="True" />
-            <Node name="Activities" expanded="True" />
-            <Node name="Resources" expanded="True" />
-          </Node>
-          <Node name="PuppyKittyOverflow.Portable" expanded="True">
-            <Node name="References" expanded="True" />
-          </Node>
-          <Node name="PuppyKittyOverflow.Touch" expanded="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/AnimatedImageView.cs" line="16" column="1" />
       <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/AnimatedImageView.cs" line="15" column="1" />
-      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/PuppyKittyOverflow.TouchViewController.cs" line="159" column="1" />
-      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/PuppyKittyOverflow.TouchViewController.cs" line="112" column="1" />
-      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/PuppyKittyOverflow.TouchViewController.cs" line="103" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/PuppyKittyOverflow.TouchViewController.cs" line="164" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/PuppyKittyOverflow.TouchViewController.cs" line="117" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/PuppyKittyOverflow/PuppyKittyOverflow.Touch/PuppyKittyOverflow.TouchViewController.cs" line="108" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

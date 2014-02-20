@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="puppy">Puppy</string>
+  <string name="kitty">Kitty</string>
+  <string name="app_name">Puppy Kitty Overflow</string>
+  <string name="about">About</string>
+  <string name="share">Share</string>
+  <string name="ok">OK</string>
+  <string name="about_text">Copyright 2013 @JamesMontemagno Refractored LLC, Content comes from DogOverflow.com and CatOverflow.com made by the amazing Aaron Bockover. Shake your phone for Otters!</string>
+</resources>

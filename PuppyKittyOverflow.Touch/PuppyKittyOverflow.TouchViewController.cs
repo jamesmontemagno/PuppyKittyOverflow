@@ -1,3 +1,4 @@
+#define STARTER
 using System;
 using System.Drawing;
 using BigTed;
@@ -31,13 +32,17 @@ namespace PuppyKittyOverflow.Touch
 
 		partial void ButtonKittyClick (NSObject sender)
 		{
+			#if !STARTER
 			FlurryAnalytics.Flurry.LogEvent("Cat");
+			#endif
 			SetImage(OverflowHelper.Animal.Cat);
 		}
 
 		partial void ButtonPuppyClick (NSObject sender)
 		{
+			#if !STARTER
 			FlurryAnalytics.Flurry.LogEvent("Dog");
+			#endif
 			SetImage(OverflowHelper.Animal.Dog);
 		}
 		private string image;
@@ -184,7 +189,9 @@ namespace PuppyKittyOverflow.Touch
 			// if the motion was a shake
 			if(motion == UIEventSubtype.MotionShake) {
 
+				#if !STARTER
 				FlurryAnalytics.Flurry.LogEvent("Otter");
+				#endif
 				SetImage (OverflowHelper.Animal.Otter);
 			}
 		}

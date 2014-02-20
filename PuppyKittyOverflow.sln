@@ -203,7 +203,7 @@ Global
 		{D6CBCFFC-20EF-4CF1-838F-C20E00131018}.Release|x86.ActiveCfg = Release|iPhone
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = PuppyKittyOverflow.Droid\PuppyKittyOverflow.Droid.csproj
+		StartupItem = PuppyKittyOverflow.Touch\PuppyKittyOverflow.Touch.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

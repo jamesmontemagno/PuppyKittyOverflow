@@ -115,7 +115,7 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="BTProgressHUD">
-      <HintPath>..\Components\btprogresshud-1.8\lib\ios\BTProgressHUD.dll</HintPath>
+      <HintPath>..\Starter\Components\btprogresshud-1.8\lib\ios\BTProgressHUD.dll</HintPath>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="FlurryAnalytics">
@@ -154,12 +154,6 @@
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PuppyKittyOverflow.Portable\PuppyKittyOverflow.Portable.csproj">
-      <Project>{3E5A7E5F-09BE-4270-8A16-97423B1B87FF}</Project>
-      <Name>PuppyKittyOverflow.Portable</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <XamarinComponentReference Include="btprogresshud">
       <Version>1.8</Version>
       <Visible>False</Visible>
@@ -169,5 +163,11 @@
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PuppyKittyOverflow.Portable\PuppyKittyOverflow.Portable.csproj">
+      <Project>{3E5A7E5F-09BE-4270-8A16-97423B1B87FF}</Project>
+      <Name>PuppyKittyOverflow.Portable</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
