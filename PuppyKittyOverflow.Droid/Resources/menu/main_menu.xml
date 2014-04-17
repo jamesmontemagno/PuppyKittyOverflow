@@ -1,17 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
   <item android:id="@+id/action_share"
         android:title="@string/share"
-        app:showAsAction="always"
-        app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
-          />
+        android:showAsAction="always"
+        android:actionProviderClass="android.widget.ShareActionProvider"/>
   
   <item android:id="@+id/action_about"
 	      android:title="@string/about"
 	      android:icon="@drawable/ic_action_action_about"
-	      app:showAsAction="ifRoom"/>
+	      android:showAsAction="ifRoom"/>
 
 </menu>

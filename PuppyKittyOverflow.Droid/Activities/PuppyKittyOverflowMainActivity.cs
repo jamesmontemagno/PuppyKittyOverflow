@@ -1,11 +1,9 @@
-﻿﻿using System;
+﻿using System;
 using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
-using Android.Support.V4.View;
-using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using Google.Analytics.Tracking;
@@ -24,7 +22,7 @@ namespace PuppyKittyOverflow.Droid.Activities
   }
 
   [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", Theme = "@style/Theme", HardwareAccelerated = false)]
-  public class PuppyKittyOverflowMainActivity : ActionBarActivity, IAccelerometerListener
+	public class PuppyKittyOverflowMainActivity : Activity, IAccelerometerListener
   {
     private ProgressBar progressBar;
     private ImageView imageView;
@@ -62,7 +60,7 @@ namespace PuppyKittyOverflow.Droid.Activities
       progressBar.Visibility = ViewStates.Invisible;
       imageView.Visibility = ViewStates.Gone;
       imageViewAnimated.Visibility = ViewStates.Gone;
-      state = LastCustomNonConfigurationInstance as PuppyKittyState;
+			state = LastNonConfigurationInstance as PuppyKittyState;
 
       if (state != null)
       {
@@ -155,11 +153,12 @@ namespace PuppyKittyOverflow.Droid.Activities
       this.InvalidateOptionsMenu();
     }
 
-    public override Object OnRetainCustomNonConfigurationInstance()
-    {
-      base.OnRetainCustomNonConfigurationInstance();
-      return state;
-    }
+		public override Object OnRetainNonConfigurationInstance ()
+		{
+			base.OnRetainNonConfigurationInstance ();
+			return state;
+		}
+			
 
 
 
@@ -167,20 +166,28 @@ namespace PuppyKittyOverflow.Droid.Activities
     {
       if (item.ItemId == Resource.Id.action_about)
       {
-        var intent = new Intent(this, typeof(AboutActivity));
-        StartActivity(intent);
+				var builder = new AlertDialog.Builder(this);
+				builder
+					.SetTitle(Resource.String.about)
+					.SetMessage(Resource.String.about_text)
+					.SetPositiveButton("OK", delegate {
+
+					});             
+
+				AlertDialog alert = builder.Create();
+				alert.Show();
       }
       return base.OnOptionsItemSelected(item);
     }
 
-    Android.Support.V7.Widget.ShareActionProvider actionProvider;
+    Android.Widget.ShareActionProvider actionProvider;
     public override bool OnCreateOptionsMenu(IMenu menu)
     {
       this.MenuInflater.Inflate(Resource.Menu.main_menu, menu);
 
       var shareItem = menu.FindItem(Resource.Id.action_share);
-      var test = MenuItemCompat.GetActionProvider(shareItem);
-      actionProvider = test.JavaCast<Android.Support.V7.Widget.ShareActionProvider>();
+			var test = shareItem.ActionProvider;
+			actionProvider = test.JavaCast<Android.Widget.ShareActionProvider>();
       if (state.SetDefault)
         shareItem.SetVisible(false);
 

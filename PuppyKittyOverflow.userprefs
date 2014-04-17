@@ -1,8 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone.6.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PuppyKittyOverflow.Portable/OverflowHelper.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PuppyKittyOverflow.Droid/Helpers/AnimatedImageView.cs">
     <Files>
       <File FileName="PuppyKittyOverflow.Portable/OverflowHelper.cs" Line="66" Column="4" />
+      <File FileName="PuppyKittyOverflow.Droid/Activities/PuppyKittyOverflowMainActivity.cs" Line="63" Column="40" />
+      <File FileName="PuppyKittyOverflow.Droid/Helpers/AnimatedImageView.cs" Line="44" Column="25" />
+      <File FileName="../../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1" Column="1" />
+      <File FileName="PuppyKittyOverflow.Droid/Resources/values/Styles.xml" Line="7" Column="44" />
+      <File FileName="PuppyKittyOverflow.Droid/Resources/menu/main_menu.xml" Line="12" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -15,7 +20,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Droid MonoForAntroid.PreferredDevice="Nexus One" MonoForAntroid.PreferredTheme="Theme" />
+  <MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Droid MonoForAntroid.PreferredDevice="Nexus One" MonoForAntroid.PreferredTheme="Theme" AndroidDeviceId-Debug="T062005D5Z" />
   <MonoDevelop.Ide.ItemProperties.PuppyKittyOverflow.Touch>
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="F8795E48Y8" TeamId="8P95D2238B" />
     <IPhoneTestFlightSettings_27CRelease ApiToken="d18ce6d107e5b5aa8b0d8d7390198e81_MTQ3MDA0MDIwMTMtMTEtMjUgMTI6MTM6NDIuODU0MzIy" TeamToken="49e672194481de8371b2dea8214f1e86_MzA0NzgzMjAxMy0xMS0yNSAxNToxMDo1Ni43Njg4NDY" ReleaseNotes="V 1.3&#xA;- Now stop/start animation when app enters/leaves background&#xA;-- sould save on battery if that was an issue" NotifyTeamMembers="False" ReplaceBinaries="False" DistributionLists="" UploadDSYMs="False" />
