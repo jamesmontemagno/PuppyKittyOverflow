@@ -1,9 +1,9 @@
 #define STARTER
 using System;
-using System.Drawing;
+using CoreGraphics;
 using BigTed;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using PuppyKittyOverflow.Portable;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -30,21 +30,7 @@ namespace PuppyKittyOverflow.Touch
 			// Release any cached data, images, etc that aren't in use.
 		}
 
-		partial void ButtonKittyClick (NSObject sender)
-		{
-			#if !STARTER
-			FlurryAnalytics.Flurry.LogEvent("Cat");
-			#endif
-			SetImage(OverflowHelper.Animal.Cat);
-		}
-
-		partial void ButtonPuppyClick (NSObject sender)
-		{
-			#if !STARTER
-			FlurryAnalytics.Flurry.LogEvent("Dog");
-			#endif
-			SetImage(OverflowHelper.Animal.Dog);
-		}
+		
 		private string image;
 		private async void SetImage(OverflowHelper.Animal animal)
 	    {
@@ -62,7 +48,7 @@ namespace PuppyKittyOverflow.Touch
 	            try
 	            {
                     
-					var client = new HttpClient();
+                    var client = new HttpClient(new ModernHttpClient.NativeMessageHandler());
 					var stream = await client.GetStreamAsync(image);
 					var data = await GetDataAsync(stream);
 					AnimatedImageView.GetAnimatedImageView(data, ImageViewAnimal);
@@ -94,11 +80,7 @@ namespace PuppyKittyOverflow.Touch
 			return await Task.Run (() =>  {return NSData.FromStream (stream);});
 		}
 
-		partial void InfoButonClick (NSObject sender)
-		{
-			var action = new UIAlertView("About", "Copyright 2013 Refractored LLC, @JamesMontemagno, Images provided by Catoverflow.com/Dogoverflow.com created by @abock  Shake phone for Otters!", null, "OK", null);
-			action.Show();
-		}
+		
 
 		#region View lifecycle
 		public void ApplicationWillResignActive(NSNotification notification)
@@ -125,18 +107,23 @@ namespace PuppyKittyOverflow.Touch
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+            NavigationController.NavigationBar.BarStyle = UIBarStyle.Black;
+
 			if(!Application.IsiOS7)
 		    	View.BackgroundColor = UIColor.LightGray;
 
-			NSNotificationCenter.DefaultCenter.AddObserver ("UIApplicationWillResignActiveNotification", ApplicationWillResignActive);
-			NSNotificationCenter.DefaultCenter.AddObserver ("UIApplicationWillTerminateNotification", ApplicationWillResignActive);
-			NSNotificationCenter.DefaultCenter.AddObserver ("UIApplicationWillEnterForegroundNotification", ApplicationWillReturnActive); 
+            NSNotificationCenter.DefaultCenter.AddObserver (new NSString("UIApplicationWillResignActiveNotification"), ApplicationWillResignActive);
+            NSNotificationCenter.DefaultCenter.AddObserver (new NSString("UIApplicationWillTerminateNotification"), ApplicationWillResignActive);
+            NSNotificationCenter.DefaultCenter.AddObserver (new NSString("UIApplicationWillEnterForegroundNotification"), ApplicationWillReturnActive); 
 
 		    ViewBackground.Layer.CornerRadius = 10.0f;
 
 			NavigationItem.RightBarButtonItem = new UIBarButtonItem (UIBarButtonSystemItem.Action, delegate {
 				if(string.IsNullOrEmpty(image))
 					return;
+
+                Xamarin.Insights.Track("Shared");
 
 				var shareText = "#PuppyKittyOverflow Adorable Animals: " + image;
 				var social = new UIActivityViewController(new NSObject[] { new NSString(shareText)}, 
@@ -148,22 +135,16 @@ namespace PuppyKittyOverflow.Touch
 
 
 
-		public override void ViewWillAppear (bool animated)
-		{
-			base.ViewWillAppear (animated);
-		}
-
 		public override void ViewDidAppear (bool animated)
 		{
 			base.ViewDidAppear (animated);
 			BecomeFirstResponder ();
 		}
 
-		public override void ViewWillDisappear (bool animated)
-		{
-			base.ViewWillDisappear (animated);
-		}
-
+        public override UIStatusBarStyle PreferredStatusBarStyle()
+        {
+            return UIStatusBarStyle.LightContent;
+        }
 
 		public override void ViewDidDisappear (bool animated)
 		{
@@ -180,23 +161,32 @@ namespace PuppyKittyOverflow.Touch
 		// Called after the iOS determines the motion wasn't noise (such as walking up stairs).
 		public override void MotionEnded (UIEventSubtype motion, UIEvent evt)
 		{
-
-
-			base.MotionEnded(motion, evt);
+            base.MotionEnded(motion, evt);
 			if (!ButtonKitty.Enabled)
 				return;
 
 			// if the motion was a shake
 			if(motion == UIEventSubtype.MotionShake) {
-
-				#if !STARTER
-				FlurryAnalytics.Flurry.LogEvent("Otter");
-				#endif
 				SetImage (OverflowHelper.Animal.Otter);
 			}
 		}
 
 
+
+        partial void ButtonRandom_TouchUpInside(UIButton sender)
+        {
+            SetImage(OverflowHelper.Animal.Random);
+        }
+
+        partial void ButtonKitty_TouchUpInside(UIButton sender)
+        {
+            SetImage(OverflowHelper.Animal.Cat);
+        }
+
+        partial void ButtonPuppy_TouchUpInside(UIButton sender)
+        {
+            SetImage(OverflowHelper.Animal.Dog);
+        }
 		#endregion
 
 	}

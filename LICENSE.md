@@ -1,4 +1,4 @@
- * Copyright (C) 2014 Refractored LLC/James Montemagno: 
+I * Copyright (C) 2014 Refractored LLC/James Montemagno: 
  * http://github.com/JamesMontemagno
  * http://twitter.com/JamesMontemagno
  * http://refractored.com

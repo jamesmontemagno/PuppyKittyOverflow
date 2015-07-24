@@ -2,8 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 namespace PuppyKittyOverflow.Touch
 {
@@ -22,9 +22,14 @@ namespace PuppyKittyOverflow.Touch
 
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
-			#if !STARTER
-			FlurryAnalytics.Flurry.StartSession ("FNDB7G8XD99Z7ZHQV4BT");
-			#endif
+            Xamarin.Insights.Initialize("6a6eb93e563f008f1e2e8d05de4b8d4c182f2321");
+            UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(53, 213, 214); //bar background
+            UINavigationBar.Appearance.TintColor = UIColor.White; //Tint color of button items
+            UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes()
+                {
+                    Font = UIFont.FromName("HelveticaNeue-Light", (nfloat)20f),
+                    TextColor = UIColor.White
+                });
 			return true;
 		}
 		// This method is invoked when the application is about to move from active to inactive state.

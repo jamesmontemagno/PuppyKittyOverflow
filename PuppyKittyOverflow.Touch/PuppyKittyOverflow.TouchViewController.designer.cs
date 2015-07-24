@@ -1,11 +1,13 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio to store outlets and
-// actions made in the UI designer. If it is removed, they will be lost.
-// Manual changes to this file may not be handled correctly.
+// This file has been generated automatically by Xamarin Studio from the outlets and
+// actions declared in your storyboard file.
+// Manual changes to this file will not be maintained.
 //
-using MonoTouch.Foundation;
+using Foundation;
+using System;
 using System.CodeDom.Compiler;
+using UIKit;
 
 namespace PuppyKittyOverflow.Touch
 {
@@ -13,46 +15,38 @@ namespace PuppyKittyOverflow.Touch
 	partial class PuppyKittyOverflow_TouchViewController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIButton ButtonKitty { get; set; }
+		UIKit.UIButton ButtonKitty { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIButton ButtonPuppy { get; set; }
+		UIKit.UIButton ButtonPuppy { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIImageView ImageViewAnimal { get; set; }
+		UIKit.UIImageView ImageViewAnimal { get; set; }
 
 		[Outlet]
-		MonoTouch.UIKit.UIView ViewBackground { get; set; }
+		UIKit.UIView ViewBackground { get; set; }
 
-		[Action ("ButtonKittyClick:")]
-		partial void ButtonKittyClick (MonoTouch.Foundation.NSObject sender);
+		[Outlet]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		UIButton ButtonRandom { get; set; }
 
-		[Action ("ButtonPuppyClick:")]
-		partial void ButtonPuppyClick (MonoTouch.Foundation.NSObject sender);
+		[Action ("ButtonKitty_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void ButtonKitty_TouchUpInside (UIButton sender);
 
-		[Action ("InfoButonClick:")]
-		partial void InfoButonClick (MonoTouch.Foundation.NSObject sender);
-		
+		[Action ("ButtonPuppy_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void ButtonPuppy_TouchUpInside (UIButton sender);
+
+		[Action ("ButtonRandom_TouchUpInside:")]
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void ButtonRandom_TouchUpInside (UIButton sender);
+
 		void ReleaseDesignerOutlets ()
 		{
-			if (ButtonKitty != null) {
-				ButtonKitty.Dispose ();
-				ButtonKitty = null;
-			}
-
-			if (ButtonPuppy != null) {
-				ButtonPuppy.Dispose ();
-				ButtonPuppy = null;
-			}
-
-			if (ImageViewAnimal != null) {
-				ImageViewAnimal.Dispose ();
-				ImageViewAnimal = null;
-			}
-
-			if (ViewBackground != null) {
-				ViewBackground.Dispose ();
-				ViewBackground = null;
+			if (ButtonRandom != null) {
+				ButtonRandom.Dispose ();
+				ButtonRandom = null;
 			}
 		}
 	}

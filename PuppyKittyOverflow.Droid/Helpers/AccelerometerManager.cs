@@ -8,17 +8,15 @@ namespace PuppyKittyOverflow.Droid.Helpers
 {
   public class AccelerometerManager
   {
-    private Context context;
 
-    private Sensor sensor;
-    private readonly SensorManager sensorManager;
+    Sensor sensor;
+    readonly SensorManager sensorManager;
 
-    private readonly ShakeSensorEventListener eventListener;
+    readonly ShakeSensorEventListener eventListener;
     public bool IsSupported { get; set; }
 
     public AccelerometerManager(Context context, IAccelerometerListener listener)
     {
-      this.context = context;
       eventListener = new ShakeSensorEventListener(listener);
       sensorManager = (SensorManager) context.GetSystemService(Context.SensorService);
       IsSupported = sensorManager.GetSensorList(SensorType.Accelerometer).Count > 0;
@@ -76,8 +74,8 @@ namespace PuppyKittyOverflow.Droid.Helpers
       public ShakeSensorEventListener(IAccelerometerListener listener)
       {
         this.listener = listener;
-        Threshold = 35.0f;
-        Interval = 300;
+        Threshold = 25.0f;
+        Interval = 200;
       }
       public void OnAccuracyChanged(Sensor sensor, SensorStatus accuracy)
       {

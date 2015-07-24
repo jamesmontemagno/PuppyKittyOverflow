@@ -52,19 +52,12 @@ namespace PuppyKittyOverflow.Droid.Helpers
 
       try
       {
-        if (false)
-        {
-          movie = Movie.DecodeStream(input);
-          movieStart = 0;
-        }
-        else
-        {
+        
           var array = await ReadFully(input);
           movie = Movie.DecodeByteArray(array, 0, array.Length);
-          var duration = movie.Duration();
-        }
+        
       }
-      catch (Exception ex)
+      catch (Exception)
       {
 
       }
@@ -127,7 +120,7 @@ namespace PuppyKittyOverflow.Droid.Helpers
         {
           
           movie.Draw(canvas, 0, 0, p);
-        }catch(Exception ex)
+        } catch(Exception)
         {
 
         }

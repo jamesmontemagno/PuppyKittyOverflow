@@ -17,25 +17,33 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bWN-Sc-VTb">
-                                <rect key="frame" x="5" y="56" width="310" height="396"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWN-Sc-VTb">
+                                <rect key="frame" x="5" y="56" width="310" height="430"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Eq-z8-PhP">
-                                        <rect key="frame" x="5" y="5" width="300" height="386"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Eq-z8-PhP">
+                                        <rect key="frame" x="5" y="5" width="300" height="420"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <constraints>
+                                            <constraint id="96" firstAttribute="width" constant="300" relation="greaterThanOrEqual"/>
+                                            <constraint id="97" firstAttribute="height" constant="420" relation="greaterThanOrEqual"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="3Eq-z8-PhP" secondAttribute="bottom" constant="5" id="467-WU-bOU"/>
-                                    <constraint firstAttribute="trailing" secondItem="3Eq-z8-PhP" secondAttribute="trailing" constant="5" id="BmJ-5O-cWR"/>
-                                    <constraint firstItem="3Eq-z8-PhP" firstAttribute="leading" secondItem="bWN-Sc-VTb" secondAttribute="leading" constant="5" id="DOw-Iy-V2J"/>
-                                    <constraint firstItem="3Eq-z8-PhP" firstAttribute="top" secondItem="bWN-Sc-VTb" secondAttribute="top" constant="5" id="Q0u-3M-14x"/>
+                                    <constraint id="92" firstAttribute="width" constant="310"/>
+                                    <constraint id="93" firstAttribute="height" constant="430"/>
+                                    <constraint id="94" constant="5" firstItem="3Eq-z8-PhP" firstAttribute="leading" secondItem="bWN-Sc-VTb" secondAttribute="leading" relation="greaterThanOrEqual"/>
+                                    <constraint id="95" constant="5" firstItem="bWN-Sc-VTb" firstAttribute="bottom" secondItem="3Eq-z8-PhP" secondAttribute="bottom" relation="greaterThanOrEqual"/>
+                                    <constraint firstItem="bWN-Sc-VTb" firstAttribute="trailing" secondItem="3Eq-z8-PhP" secondAttribute="trailing" constant="5" id="136"/>
+                                    <constraint firstItem="3Eq-z8-PhP" firstAttribute="top" secondItem="bWN-Sc-VTb" secondAttribute="top" constant="5" id="139"/>
+                                    <constraint firstItem="3Eq-z8-PhP" firstAttribute="centerY" secondItem="bWN-Sc-VTb" secondAttribute="centerY" constant="0.0" id="143"/>
+                                    <constraint firstItem="3Eq-z8-PhP" firstAttribute="centerX" secondItem="bWN-Sc-VTb" secondAttribute="centerX" constant="0.0" id="145"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvt-2N-lNP">
-                                <rect key="frame" x="56" y="14" width="100" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvt-2N-lNP">
+                                <rect key="frame" x="5" y="14" width="100" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Puppy">
@@ -43,11 +51,14 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonPuppyClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fur-8k-Tl0"/>
+                                    <action selector="ButtonPuppy_TouchUpInside:" destination="vXZ-lx-hvc" id="104" eventType="touchUpInside"/>
                                 </connections>
+                                <constraints>
+                                    <constraint id="84" firstItem="Qvt-2N-lNP" firstAttribute="width" constant="100" relation="greaterThanOrEqual"/>
+                                </constraints>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOZ-DW-N7z">
-                                <rect key="frame" x="164" y="14" width="100" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOZ-DW-N7z">
+                                <rect key="frame" x="106" y="14" width="100" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <state key="normal" title="Kitty">
@@ -55,40 +66,52 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonKittyClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="t9L-Bt-jwR"/>
+                                    <action selector="ButtonKitty_TouchUpInside:" destination="vXZ-lx-hvc" id="103" eventType="touchUpInside"/>
                                 </connections>
+                                <constraints>
+                                    <constraint id="85" firstItem="ZOZ-DW-N7z" firstAttribute="width" constant="100" relation="greaterThanOrEqual"/>
+                                </constraints>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJY-1c-pOE">
-                                <rect key="frame" x="149" y="462" width="22" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4">
+                                <rect key="frame" x="207" y="14" width="100" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <state key="normal" title="Random">
+                                    <color key="titleColor" red="1" green="0.0027472579380000001" blue="0.97791595659999997" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="InfoButonClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="U1V-b4-6Eu"/>
+                                    <action selector="ButtonKittyClick:" destination="6" eventType="touchUpInside" id="5"/>
+                                    <action selector="ButtonRandom_TouchUpInside:" destination="vXZ-lx-hvc" id="102" eventType="touchUpInside"/>
                                 </connections>
+                                <constraints>
+                                    <constraint id="86" firstItem="4" firstAttribute="width" constant="100" relation="greaterThanOrEqual"/>
+                                </constraints>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bWN-Sc-VTb" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="56" id="Dim-bG-QFV"/>
-                            <constraint firstAttribute="bottom" secondItem="bWN-Sc-VTb" secondAttribute="bottom" constant="52" id="G3s-O6-TtJ"/>
-                            <constraint firstItem="bWN-Sc-VTb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="LIg-Of-5s9"/>
-                            <constraint firstAttribute="trailing" secondItem="dJY-1c-pOE" secondAttribute="trailing" constant="149" id="Qo2-bU-PJd"/>
-                            <constraint firstItem="dJY-1c-pOE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="149" id="Ve9-gt-MSz"/>
-                            <constraint firstAttribute="bottom" secondItem="dJY-1c-pOE" secondAttribute="bottom" constant="20" id="fZb-hi-cZO"/>
-                            <constraint firstAttribute="trailing" secondItem="bWN-Sc-VTb" secondAttribute="trailing" constant="20" id="tK4-Rg-jlk"/>
+                            <constraint firstItem="kh9-bI-dsS" firstAttribute="trailing" secondItem="4" secondAttribute="trailing" constant="13" id="79"/>
+                            <constraint firstItem="4" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="14" id="80"/>
+                            <constraint firstItem="Qvt-2N-lNP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="81"/>
+                            <constraint firstItem="Qvt-2N-lNP" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="14" id="82"/>
+                            <constraint firstItem="ZOZ-DW-N7z" firstAttribute="leading" secondItem="Qvt-2N-lNP" secondAttribute="trailing" constant="1" id="83"/>
+                            <constraint firstItem="ZOZ-DW-N7z" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="14" id="87"/>
+                            <constraint id="90" constant="5" firstItem="kh9-bI-dsS" firstAttribute="trailing" secondItem="bWN-Sc-VTb" secondAttribute="trailing"/>
+                            <constraint id="91" constant="18" firstItem="kh9-bI-dsS" firstAttribute="bottom" secondItem="bWN-Sc-VTb" secondAttribute="bottom"/>
+                            <constraint firstItem="bWN-Sc-VTb" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="56" id="131"/>
+                            <constraint firstItem="bWN-Sc-VTb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="5" id="132"/>
+                            <constraint firstItem="4" firstAttribute="leading" secondItem="ZOZ-DW-N7z" secondAttribute="trailing" constant="1" id="133"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" id="5Bx-k6-rN2"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem key="navigationItem" id="5Bx-k6-rN2" title="Puppy Kitty Overflow"/>
                     <connections>
                         <outlet property="ButtonKitty" destination="ZOZ-DW-N7z" id="zim-II-vvC"/>
                         <outlet property="ButtonPuppy" destination="Qvt-2N-lNP" id="8Fh-fu-HIw"/>
                         <outlet property="ImageViewAnimal" destination="3Eq-z8-PhP" id="Bzi-Fu-Rwk"/>
                         <outlet property="ViewBackground" destination="bWN-Sc-VTb" id="J9U-Gm-YAX"/>
+                        <outlet property="ButtonRandom" destination="4" id="name-outlet-4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -116,4 +139,14 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <resources>
+        <image name="Default-568h.png" width="640" height="1136"/>
+        <image name="cat.png" width="200" height="128"/>
+        <image name="dog.png" width="486" height="458"/>
+        <image name="Icon.png" width="57" height="57"/>
+        <image name="Icon-60.png" width="120" height="120"/>
+        <image name="Default.png" width="320" height="480"/>
+        <image name="Icon-Small-40.png" width="80" height="80"/>
+        <image name="Icon-Small.png" width="29" height="29"/>
+    </resources>
 </document>

@@ -1,10 +1,9 @@
 using System.Collections.Generic;
-using System.Drawing;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreGraphics;
-using MonoTouch.Foundation;
-using MonoTouch.ImageIO;
-using MonoTouch.UIKit;
+using CoreAnimation;
+using CoreGraphics;
+using Foundation;
+using ImageIO;
+using UIKit;
 
 namespace PuppyKittyOverflow.Touch
 {
@@ -29,9 +28,9 @@ namespace PuppyKittyOverflow.Touch
         {
             var frameCount = imageSource.ImageCount;
 
-            var frameImages = new List<NSObject>(frameCount);
-            var frameCGImages = new List<CGImage>(frameCount);
-            var frameDurations = new List<double>(frameCount);
+            var frameImages = new List<NSObject>((int)frameCount);
+            var frameCGImages = new List<CGImage>((int)frameCount);
+            var frameDurations = new List<double>((int)frameCount);
 
             var totalFrameDuration = 0.0;
 
@@ -52,8 +51,8 @@ namespace PuppyKittyOverflow.Touch
 				frameImage.Dispose ();
             }
 
-            var framePercentageDurations = new List<NSNumber>(frameCount);
-            var framePercentageDurationsDouble = new List<double>(frameCount);
+            var framePercentageDurations = new List<NSNumber>((int)frameCount);
+            var framePercentageDurationsDouble = new List<double>((int)frameCount);
             NSNumber currentDurationPercentage = 0.0f;
             double currentDurationDouble = 0.0f;
             for (int i = 0; i < frameCount; i++)
@@ -96,7 +95,7 @@ namespace PuppyKittyOverflow.Touch
             frameAnimation.RemovedOnCompletion = false;
             var firstFrame = frameCGImages[0];
             if(imageView == null)
-                imageView = new UIImageView(new RectangleF(0.0f, 0.0f, firstFrame.Width, firstFrame.Height));
+                imageView = new UIImageView(new CGRect(0.0f, 0.0f, firstFrame.Width, firstFrame.Height));
             else
                 imageView.Layer.RemoveAllAnimations();
 
