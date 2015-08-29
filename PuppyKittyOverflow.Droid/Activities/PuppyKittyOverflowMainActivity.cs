@@ -13,6 +13,7 @@ using AndroidHUD;
 using Android.Support.V7.App;
 using Android.Support.V4.View;
 using Toolbar = Android.Support.V7.Widget.Toolbar;
+using Felipecsl.GifImageViewLibrary;
 
 namespace PuppyKittyOverflow.Droid.Activities
 {
@@ -26,7 +27,7 @@ namespace PuppyKittyOverflow.Droid.Activities
         public Task CurrentTask { get; set; }
     }
 
-    [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, Theme = "@style/MyTheme", HardwareAccelerated = false)]
+    [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/ic_launcher", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, Theme = "@style/MyTheme", HardwareAccelerated = true)]
     public class PuppyKittyOverflowMainActivity : AppCompatActivity, IAccelerometerListener
     {
         ProgressBar progressBar;
@@ -34,7 +35,7 @@ namespace PuppyKittyOverflow.Droid.Activities
         Button buttonPuppy;
         Button buttonKitty;
         Button buttonRandom;
-        AnimatedImageView imageViewAnimated;
+        GifImageView imageViewAnimated;
         PuppyKittyState state;
         AccelerometerManager accelerometerManager;
 
@@ -72,7 +73,7 @@ namespace PuppyKittyOverflow.Droid.Activities
 
             progressBar = FindViewById<ProgressBar>(Resource.Id.progressbar);
             imageView = FindViewById<ImageView>(Resource.Id.imageview_animal);
-            imageViewAnimated = FindViewById<Helpers.AnimatedImageView>(Resource.Id.imageview_animal_animated);
+            imageViewAnimated = FindViewById<GifImageView>(Resource.Id.imageview_animal_animated);
             progressBar.Visibility = ViewStates.Invisible;
             imageView.Visibility = ViewStates.Gone;
             imageViewAnimated.Visibility = ViewStates.Gone;
@@ -99,7 +100,7 @@ namespace PuppyKittyOverflow.Droid.Activities
             imageViewAnimated.Visibility = ViewStates.Gone;
             buttonKitty.Enabled = false;
             buttonPuppy.Enabled = false;
-
+            buttonRandom.Enabled = false;
             state.SetDefault = true;
             state.Image = animal == OverflowHelper.Animal.Cat ? "cat" : "dog";
             try
@@ -123,6 +124,7 @@ namespace PuppyKittyOverflow.Droid.Activities
             progressBar.Indeterminate = false;
             buttonKitty.Enabled = true;
             buttonPuppy.Enabled = true;
+            buttonRandom.Enabled = true;
             AndHUD.Shared.Dismiss(this);
         }
 
@@ -140,8 +142,8 @@ namespace PuppyKittyOverflow.Droid.Activities
             {
                 try
                 {
-                    var stream = await OverflowHelper.GetStreamAsync(state.Image);
-                    await imageViewAnimated.Initialize(stream);
+                    var stream = await OverflowHelper.GetByteArrayAsync(state.Image);
+                    imageViewAnimated.SetBytes(stream);
                     imageViewAnimated.Visibility = ViewStates.Visible;
                 }
                 catch (Exception)
@@ -151,7 +153,7 @@ namespace PuppyKittyOverflow.Droid.Activities
                 }
             }
 
-            this.InvalidateOptionsMenu();
+            InvalidateOptionsMenu();
         }
 
 
@@ -177,7 +179,7 @@ namespace PuppyKittyOverflow.Droid.Activities
         Android.Support.V7.Widget.ShareActionProvider actionProvider;
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            this.MenuInflater.Inflate(Resource.Menu.main_menu, menu);
+            MenuInflater.Inflate(Resource.Menu.main_menu, menu);
 
             var shareItem = menu.FindItem(Resource.Id.action_share);
             var provider = MenuItemCompat.GetActionProvider(shareItem);
@@ -204,7 +206,7 @@ namespace PuppyKittyOverflow.Droid.Activities
             if (accelerometerManager.IsSupported)
                 accelerometerManager.StartListening();
 
-            imageViewAnimated.Start();
+            imageViewAnimated.StartAnimation();
         }
            
 
@@ -214,7 +216,7 @@ namespace PuppyKittyOverflow.Droid.Activities
             if (accelerometerManager.IsListening)
                 accelerometerManager.StopListening();
 
-            imageViewAnimated.Stop();
+            imageViewAnimated.StopAnimation();
         }
 
         protected override void OnDestroy()

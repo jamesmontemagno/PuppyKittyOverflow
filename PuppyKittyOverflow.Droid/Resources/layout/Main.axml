@@ -64,12 +64,12 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:scaleType="fitXY" />
-        <puppykittyoverflow.droid.helpers.AnimatedImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+        <com.felipecsl.gifimageview.library.GifImageView
             android:id="@+id/imageview_animal_animated"
             android:layout_gravity="center"
+            android:scaleType="fitCenter"
             android:gravity="center"
-            android:scaleType="fitXY" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </android.support.v7.widget.CardView>
 </LinearLayout>

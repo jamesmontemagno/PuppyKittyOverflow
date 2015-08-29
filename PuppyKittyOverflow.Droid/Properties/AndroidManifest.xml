@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.refractored.puppykittyoverflow" android:versionName="1.4" android:versionCode="5">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="com.refractored.puppykittyoverflow" android:versionName="1.5" android:versionCode="6">
 	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="21" />
 	<application android:theme="@style/MyTheme" android:label="@string/app_name" android:icon="@drawable/ic_launcher">
 	</application>

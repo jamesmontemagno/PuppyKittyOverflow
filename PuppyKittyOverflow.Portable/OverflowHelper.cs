@@ -22,8 +22,18 @@ namespace PuppyKittyOverflow.Portable
 
         public async static Task<Stream> GetStreamAsync(string url)
         {
-            var httpClient = new HttpClient(new ModernHttpClient.NativeMessageHandler());
-            return await httpClient.GetStreamAsync(url);
+            using (var httpClient = new HttpClient(new ModernHttpClient.NativeMessageHandler()))
+            {
+                return await httpClient.GetStreamAsync(url);
+            }
+        }
+
+        public async static Task<byte[]> GetByteArrayAsync(string url)
+        {
+            using (var httpClient = new HttpClient(new ModernHttpClient.NativeMessageHandler()))
+            {
+                return await httpClient.GetByteArrayAsync(url);
+            }
         }
 
         const string CatUrl = "http://catoverflow.com/api/query?limit=1&order=random";

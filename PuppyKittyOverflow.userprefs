@@ -1,13 +1,8 @@
 ﻿<Properties StartupItem="PuppyKittyOverflow.Droid/PuppyKittyOverflow.Droid.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus 4 (Lollipop)" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.10.71.34.101:5555" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PuppyKittyOverflow.Droid/Activities/PuppyKittyOverflowMainActivity.cs">
     <Files>
-      <File FileName="PuppyKittyOverflow.Droid/Resources/values/Styles.xml" Line="14" Column="42" />
-      <File FileName="PuppyKittyOverflow.Droid/Resources/menu/main_menu.xml" Line="12" Column="61" />
-      <File FileName="PuppyKittyOverflow.Droid/Activities/PuppyKittyOverflowMainActivity.cs" Line="81" Column="14" />
-      <File FileName="PuppyKittyOverflow.Droid/Helpers/AnimatedImageView.cs" Line="111" Column="9" />
-      <File FileName="PuppyKittyOverflow.Droid/Helpers/AccelerometerManager.cs" Line="19" Column="6" />
-      <File FileName="PuppyKittyOverflow.Droid/Resources/values/Colors.xml" Line="1" Column="1" />
+      <File FileName="PuppyKittyOverflow.Droid/Activities/PuppyKittyOverflowMainActivity.cs" Line="127" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
